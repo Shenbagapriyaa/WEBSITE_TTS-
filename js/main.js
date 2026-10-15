@@ -111,6 +111,30 @@ const products = {
     description: 'Know what material is in stock, where it is stored and what has been issued. Keep receiving, inventory and production replenishment in sync.',
     stages: ['Receive', 'Locate', 'Dispatch'], image: 'assets/img/factory-aerial.jpg',
     alt: 'Factory warehouses and loading areas for inventory movement', label: 'STOCK LOCATION', value: 'BIN A-03 READY'
+  },
+  trakwel: {
+    number: '07', name: 'TrakWel',
+    description: 'Manufacturing Execution System (MES) for real-time visibility and control across the shop floor, improving efficiency, quality and performance.',
+    stages: ['Track', 'Monitor', 'Improve'], image: 'assets/img/production-tracking.jpg',
+    alt: 'Live production tracking across garment factory lines', label: 'SHOP FLOOR', value: 'LIVE VISIBILITY', visual: 'trakwel'
+  },
+  planwel: {
+    number: '08', name: 'PlanWel',
+    description: 'Advanced planning and scheduling to balance capacity, manage orders and keep delivery commitments on track with dynamic schedules.',
+    stages: ['Plan', 'Schedule', 'Deliver'], image: 'assets/img/production-planning.jpg',
+    alt: 'Production plan and schedule for garment manufacturing', label: 'CAPACITY PLAN', value: 'SCHEDULED', visual: 'planning'
+  },
+  mtrak: {
+    number: '09', name: 'mTrak',
+    description: 'Machine maintenance management that maximizes machine uptime, reduces downtime and extends equipment life with preventive maintenance.',
+    stages: ['Monitor', 'Maintain', 'Optimize'], image: 'assets/img/quality-control.jpg',
+    alt: 'Connected sewing machines monitored across the factory floor', label: 'MACHINE HEALTH', value: 'RUNNING WELL', visual: 'maintenance'
+  },
+  sewlot: {
+    number: '10', name: 'SewloT',
+    description: 'IoT for sewing lines. Connect the sewing floor with technology to monitor, analyze and improve productivity.',
+    stages: ['Connect', 'Analyze', 'Improve'], image: 'assets/img/dashboard-impact.jpg',
+    alt: 'Sewing line productivity dashboard with live factory metrics', label: 'SEWING LINE', value: 'CONNECTED', visual: 'sewlot'
   }
 };
 
@@ -131,7 +155,7 @@ const selectProduct = (productId) => {
   productDescription.textContent = product.description;
   productImage.src = product.image;
   productImage.alt = product.alt;
-  productVisual.dataset.product = productId;
+  productVisual.dataset.product = product.visual || productId;
   document.getElementById('productStageOne').textContent = product.stages[0];
   document.getElementById('productStageTwo').textContent = product.stages[1];
   document.getElementById('productStageThree').textContent = product.stages[2];

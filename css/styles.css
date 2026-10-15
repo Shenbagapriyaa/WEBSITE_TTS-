@@ -164,7 +164,7 @@ nav .nav-products .products-menu a.is-selected{box-shadow:inset 4px 0 #146477;fo
 .product-photo>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:product-image-in .7s ease both;}
 .product-animation-stage{position:relative;min-width:0;min-height:390px;overflow:hidden;background:radial-gradient(ellipse at 50% 28%,rgba(47,232,200,0.13),transparent 48%),linear-gradient(145deg,#183B4C,#0A1E2B);}
 .visual-widget{position:absolute;inset:0;z-index:2;display:none;}
-.product-visual[data-product="quality"] .visual-widget--quality,.product-visual[data-product="tracking"] .visual-widget--tracking,.product-visual[data-product="maintenance"] .visual-widget--maintenance,.product-visual[data-product="fabric"] .visual-widget--fabric,.product-visual[data-product="planning"] .visual-widget--planning,.product-visual[data-product="warehouse"] .visual-widget--warehouse{display:block;}
+.product-visual[data-product="quality"] .visual-widget--quality,.product-visual[data-product="tracking"] .visual-widget--tracking,.product-visual[data-product="maintenance"] .visual-widget--maintenance,.product-visual[data-product="fabric"] .visual-widget--fabric,.product-visual[data-product="planning"] .visual-widget--planning,.product-visual[data-product="warehouse"] .visual-widget--warehouse,.product-visual[data-product="trakwel"] .visual-widget--trakwel,.product-visual[data-product="sewlot"] .visual-widget--sewlot{display:block;}
 .quality-frame{position:absolute;top:19%;left:16%;width:68%;height:47%;border:1px solid rgba(126,255,226,0.75);box-shadow:0 0 0 999px rgba(8,35,38,0.08);}
 .quality-frame i{position:absolute;width:14px;height:14px;border-color:#78F2D5;border-style:solid;}
 .quality-frame i:nth-child(1){top:-2px;left:-2px;border-width:2px 0 0 2px;}
@@ -205,6 +205,27 @@ nav .nav-products .products-menu a.is-selected{box-shadow:inset 4px 0 #146477;fo
 .warehouse-rack i{border:1px solid rgba(141,255,230,0.74);background:linear-gradient(135deg,rgba(47,232,200,0.36),rgba(15,49,65,0.76));animation:stock-pulse 2.8s ease-in-out infinite;}
 .warehouse-rack i:nth-child(3n){animation-delay:.4s;}.warehouse-rack i:nth-child(3n + 1){animation-delay:.8s;}
 .warehouse-beacon{position:absolute;top:33%;left:34%;width:18%;height:17%;border:2px solid #8DFFE6;box-shadow:0 0 18px rgba(47,232,200,0.7);animation:beacon-scan 3s ease-in-out infinite alternate;}
+.mes-header,.sewlot-header{position:absolute;top:15%;left:10%;display:flex;width:80%;justify-content:space-between;color:#B9CED4;font-size:0.62rem;font-weight:700;letter-spacing:.08em;}
+.mes-header b,.sewlot-header b{color:#8DFFE6;font-size:0.58rem;}
+.mes-metrics{position:absolute;top:28%;left:10%;display:grid;width:80%;grid-template-columns:1fr 1fr;gap:10px;}
+.mes-metrics>div{display:flex;min-height:94px;flex-direction:column;justify-content:center;padding:10px;border:1px solid rgba(141,255,230,0.3);background:rgba(7,26,36,0.62);}
+.mes-metrics span,.mes-order>span{color:#AFC4CA;font-size:0.55rem;font-weight:700;letter-spacing:.06em;}
+.mes-metrics strong{margin:4px 0;color:#E8FFFA;font-size:1.32rem;line-height:1;}
+.mes-metrics small{color:#8DFFE6;font-size:0.57rem;}
+.mes-order{position:absolute;top:62%;left:10%;display:grid;width:80%;grid-template-columns:1fr auto;gap:8px;align-items:center;}
+.mes-order strong{color:#8DFFE6;font-size:0.66rem;}
+.mes-order i{grid-column:1 / -1;height:6px;overflow:hidden;background:rgba(255,255,255,0.18);}
+.mes-order i::before{display:block;width:78%;height:100%;background:#43DCC1;content:"";}
+.sewlot-header{top:19%;}
+.sewlot-stations{position:absolute;top:37%;left:9%;display:grid;width:82%;grid-template-columns:repeat(3,minmax(0,1fr));}
+.sewlot-stations::before{position:absolute;top:17px;left:13%;width:74%;height:1px;background:rgba(141,255,230,0.65);content:"";}
+.sewlot-stations>div{z-index:1;display:flex;min-width:0;flex-direction:column;align-items:center;gap:7px;}
+.sewlot-stations i{display:grid;width:34px;height:34px;place-items:center;border:1px solid #8DFFE6;border-radius:50%;background:#123744;color:#FFFFFF;font-size:0.64rem;font-style:normal;}
+.sewlot-stations b{color:#FFFFFF;font-size:0.5rem;letter-spacing:.04em;}
+.sewlot-stations span{color:#8DFFE6;font-size:0.48rem;font-weight:700;}
+.sewlot-metrics{position:absolute;top:63%;left:10%;display:grid;width:80%;grid-template-columns:1fr 1fr;gap:8px;}
+.sewlot-metrics span{padding:10px 6px;border:1px solid rgba(141,255,230,0.28);background:rgba(7,26,36,0.62);color:#B9CED4;text-align:center;font-size:0.58rem;}
+.sewlot-metrics b{display:block;margin-bottom:3px;color:#8DFFE6;font-size:0.95rem;}
 .visual-status{position:absolute;right:16px;bottom:16px;z-index:3;display:flex;align-items:center;gap:9px;max-width:calc(100% - 32px);padding:10px 12px;border:1px solid rgba(255,255,255,0.3);border-radius:4px;background:rgba(7,24,34,0.84);backdrop-filter:blur(6px);}
 .visual-status span{color:#C3D4D8;font-size:0.68rem;}
 .visual-status strong{color:#8DFFE6;font-size:0.68rem;white-space:nowrap;}
