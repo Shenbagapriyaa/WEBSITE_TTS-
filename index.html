@@ -6,7 +6,7 @@
 <title>Track Tech Solution | Software for Garment Factories</title>
 <meta name="description" content="Track materials, orders, production and quality in one clear view, from the first roll of fabric to the final shipment.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -15,21 +15,38 @@
 
 <nav id="siteNav">
   <div class="nav-inner">
-    <div class="wordmark">Track<span>Tech</span> Solution</div>
+    <a class="brand-lockup" href="#about" aria-label="Track Tech Solution home">
+      <img class="brand-mark" src="assets/img/track-tech-mark.svg" alt="">
+      <span class="wordmark">Track<span>Tech</span> Solution</span>
+    </a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#about">About</a></li>
-      <li><a href="#solutions">Solutions</a></li>
-      <li><a href="#workflow">Workflow</a></li>
-      <li><a href="#impact">Impact</a></li>
-      <li><a href="#stories">Stories</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li class="nav-about" id="navAbout" data-nav-section="about">
+        <button class="nav-about-toggle" id="aboutToggle" type="button" aria-expanded="false" aria-controls="aboutMenu">About <span class="nav-chevron" aria-hidden="true"></span></button>
+        <div class="products-menu" id="aboutMenu" role="menu" aria-label="About Track Tech">
+          <a href="#company-profile" role="menuitem">Track Tech Solutions</a>
+          <a href="#leadership" role="menuitem">Our Leadership Team</a>
+        </div>
+      </li>
+      <li class="nav-products" id="navProducts" data-nav-section="products">
+        <button class="nav-products-toggle" id="productsToggle" type="button" aria-expanded="false" aria-controls="productsMenu">Products <span class="nav-chevron" aria-hidden="true"></span></button>
+        <div class="products-menu" id="productsMenu" role="menu" aria-label="Products">
+          <a href="#product-experience" class="is-selected" role="menuitem" data-product-choice="quality">Quality Control</a>
+          <a href="#product-experience" role="menuitem" data-product-choice="tracking">Production Tracking</a>
+          <a href="#product-experience" role="menuitem" data-product-choice="maintenance">Machine Maintenance</a>
+          <a href="#product-experience" role="menuitem" data-product-choice="fabric">Fabric Optimization</a>
+          <a href="#product-experience" role="menuitem" data-product-choice="planning">Production Planning</a>
+          <a href="#product-experience" role="menuitem" data-product-choice="warehouse">Warehouse Management</a>
+        </div>
+      </li>
+      <li data-nav-section="clients"><a href="#clients">Clients</a></li>
+      <li data-nav-section="contact"><a href="#contact">Contact</a></li>
     </ul>
     <a class="nav-cta" href="#contact">Book a demo</a>
   </div>
 </nav>
 
-<header id="about" class="hero">
+<header id="about" class="hero" data-nav-target="about">
   <video class="hero-bg-video" id="heroVideo" autoplay muted loop playsinline poster="assets/img/factory-aerial.jpg">
     <source src="assets/video/factory-loop.mp4" type="video/mp4">
   </video>
@@ -42,168 +59,188 @@
       <p>From the first roll of fabric to the final shipment, Track Tech helps your team see what is happening, fix issues sooner and keep every order moving.</p>
       <div class="hero-ctas">
         <a class="btn-primary" href="#contact">Book a demo</a>
-        <a class="btn-ghost" href="#solutions">See how it works</a>
-      </div>
-      <div class="hero-stats">
-        <div><b class="counter" data-target="37" data-suffix="%">0%</b><span>More efficient production</span></div>
-        <div><b class="counter" data-target="28" data-suffix="%">0%</b><span>Less material waste</span></div>
-        <div><b class="counter" data-target="99.2" data-decimals="1" data-suffix="%">0%</b><span>Average quality score</span></div>
+        <a class="btn-ghost" href="#products">Explore products</a>
       </div>
     </div>
   </div>
 
-  <div class="live-ticker" aria-hidden="true">
-    <div class="live-dot"></div>
-    <span id="tickerLine">LIVE FLOOR &nbsp;·&nbsp; Line 3 · Piece #<span id="tickerCount">18420</span> passed QC &nbsp;·&nbsp; OEE 92%</span>
-  </div>
 </header>
 
-<section id="solutions" class="solutions-section reveal">
-  <video class="section-video solutions-bg-video" autoplay muted loop playsinline aria-hidden="true">
+<section id="company-profile" class="company-section reveal" data-nav-target="about">
+  <video class="hero-bg-video" autoplay muted loop playsinline aria-hidden="true" poster="assets/img/factory-aerial.jpg">
     <source src="assets/video/factory-loop.mp4" type="video/mp4">
   </video>
-  <div class="solutions-video-overlay"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-watermark-mask" aria-hidden="true"></div>
+  <div class="wrap section-content company-layout">
+    <div class="company-copy">
+      <p class="kicker">Track Tech Solutions <span> / EST. 2019</span></p>
+      <h2>Digital clarity for the people who make apparel</h2>
+      <p>Track Tech Solutions builds practical digital tools for apparel manufacturing. The platform connects production, quality, planning, materials and factory-floor teams, helping people see what is happening and act while there is still time to improve the outcome.</p>
+      <p>Since 2019, the team has focused on bringing useful technology closer to everyday factory work, supporting implementation across more than 74 factories in two countries.</p>
+      <a class="company-link" href="https://www.linkedin.com/company/track-tech-solution/about/" target="_blank" rel="noopener">Company profile on LinkedIn <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="company-facts" aria-label="Track Tech Solutions at a glance">
+      <div><strong>2019</strong><span>Established</span></div>
+      <div><strong>74+</strong><span>Factories supported</span></div>
+      <div><strong>02</strong><span>Countries</span></div>
+      <div><strong>36</strong><span>Professionals</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="leadership" class="leadership-section reveal" data-nav-target="about">
+  <video class="hero-bg-video" autoplay muted loop playsinline aria-hidden="true" poster="assets/img/factory-aerial.jpg">
+    <source src="assets/video/factory-loop.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-watermark-mask" aria-hidden="true"></div>
+  <div class="wrap section-content">
+    <div class="section-head leadership-intro">
+      <p class="kicker">Our leadership team</p>
+      <h2>Built around manufacturing, operations and technology</h2>
+      <p>Three perspectives working together to make factory software practical, dependable and useful on the floor.</p>
+    </div>
+    <div class="leadership-grid">
+      <article class="leader-profile">
+        <div class="leader-mark" aria-hidden="true">GM</div>
+        <p class="leader-role">CHIEF EXECUTIVE OFFICER</p>
+        <h3>Gopinath M. (Muniraj)</h3>
+        <p class="leader-bio">Gopinath's career spans apparel manufacturing and digital solutions, including regional sales leadership at Coats Digital and roles associated with Arvind Limited and K Mohan Exports. At Track Tech, he leads the company's direction and its focus on bringing technology into everyday factory operations.</p>
+        <a href="https://rocketreach.co/gopinath-muniraj-email_598095225" target="_blank" rel="noopener">Professional profile <span aria-hidden="true">↗</span></a>
+      </article>
+      <article class="leader-profile">
+        <div class="leader-mark" aria-hidden="true">LB</div>
+        <p class="leader-role">CHIEF OPERATING OFFICER</p>
+        <h3>Lebinesh Balan</h3>
+        <p class="leader-bio">Lebinesh focuses on turning strategy into consistent delivery: aligning customer implementation, teams and day-to-day operations. His work as COO supports smooth adoption of Track Tech across factory environments and keeps customer needs connected to execution.</p>
+        <a href="https://in.linkedin.com/in/lebinesh-balan-a2521637" target="_blank" rel="noopener">LinkedIn profile <span aria-hidden="true">↗</span></a>
+      </article>
+      <article class="leader-profile">
+        <div class="leader-mark" aria-hidden="true">DR</div>
+        <p class="leader-role">CHIEF TECHNOLOGY OFFICER</p>
+        <h3>Deepak Rajkumar</h3>
+        <p class="leader-bio">Deepak guides the technology behind the platform, with a focus on reliable product engineering, useful integrations and clear information for factory teams. As CTO, he helps turn complex manufacturing workflows into software people can use with confidence.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="products" class="products-section reveal" data-nav-target="products">
+  <video class="hero-bg-video" autoplay muted loop playsinline aria-hidden="true">
+    <source src="assets/video/factory-loop.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-watermark-mask" aria-hidden="true"></div>
   <div class="wrap section-content">
     <div class="section-head">
       <p class="kicker">What we help with</p>
       <h2>The tools your factory team needs, in one place</h2>
       <p>Use the modules you need today, then connect the rest as your operation grows. Together, they give your team a clear view from fabric receiving to finished goods.</p>
     </div>
-    <div class="solutions-grid">
-      <div class="sol-card">
-        <div class="sol-media" style="background-image:url('assets/img/quality-control.jpg');"></div>
-        <div class="sol-body">
-          <div class="sol-num">Quality Control</div>
-          <h3>Find problems while they are still easy to fix</h3>
-          <p>Record inspections on the line, spot recurring issues and deal with defects before they reach packing or the warehouse.</p>
-          <a href="#">Explore quality control →</a>
+    <div class="product-experience" id="product-experience">
+      <article class="product-detail" id="product-detail" role="tabpanel" aria-live="polite">
+        <div class="product-copy">
+          <p class="product-kicker" id="productKicker">PRODUCT 01 <span>/</span> QUALITY CONTROL</p>
+          <h3 id="productTitle">Quality Control</h3>
+          <p class="product-description" id="productDescription">Record inspections on the line, spot recurring issues and deal with defects before they reach packing or the warehouse.</p>
+          <ol class="product-stages" aria-label="Product workflow">
+            <li><span>01</span><strong id="productStageOne">Inspect</strong></li>
+            <li><span>02</span><strong id="productStageTwo">Flag</strong></li>
+            <li><span>03</span><strong id="productStageThree">Resolve</strong></li>
+          </ol>
+          <a class="btn-primary product-cta" href="#contact">Talk to our team</a>
         </div>
-      </div>
-      <div class="sol-card">
-        <div class="sol-media" style="background-image:url('assets/img/production-tracking.jpg');"></div>
-        <div class="sol-body">
-          <div class="sol-num">Production Tracking</div>
-          <h3>Know where every order stands</h3>
-          <p>Follow work in progress across lines and facilities, so supervisors do not have to wait for end-of-day updates to know what needs attention.</p>
-          <a href="#">Explore production tracking →</a>
+        <div class="product-visual" id="productVisual" data-product="quality">
+          <div class="product-photo">
+            <img id="productImage" src="assets/img/quality-control.jpg" alt="Garment quality inspection on the factory floor">
+          </div>
+          <div class="product-animation-stage">
+            <div class="visual-widget visual-widget--quality" aria-hidden="true">
+              <div class="quality-frame"><i></i><i></i><i></i><i></i><span class="quality-target quality-target--one"></span><span class="quality-target quality-target--two"></span><div class="quality-scan-line"></div></div>
+              <span class="quality-callout quality-callout--one">Seam check <b>PASS</b></span>
+              <span class="quality-callout quality-callout--two">Finish <b>PASS</b></span>
+            </div>
+            <div class="visual-widget visual-widget--tracking" aria-hidden="true">
+              <div class="tracking-route"><span class="route-line"></span><i>01</i><i>02</i><i>03</i><b class="route-runner"></b></div>
+              <div class="tracking-labels"><span>Cutting</span><span>Sewing</span><span>Finishing</span></div>
+            </div>
+            <div class="visual-widget visual-widget--maintenance" aria-hidden="true">
+              <div class="machine-gauge"><span class="gauge-ring"></span><span class="gauge-needle"></span><b>86%</b></div>
+            </div>
+            <div class="visual-widget visual-widget--fabric" aria-hidden="true">
+              <div class="fabric-marker"><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="fabric-roll"><i></i><i></i><i></i></div>
+            </div>
+            <div class="visual-widget visual-widget--planning" aria-hidden="true">
+              <div class="planning-board"><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span></div>
+            </div>
+            <div class="visual-widget visual-widget--warehouse" aria-hidden="true">
+              <div class="warehouse-rack"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <span class="warehouse-beacon"></span>
+            </div>
+            <div class="visual-status"><span id="productVisualLabel">QUALITY CHECK</span><strong id="productVisualValue">CHECKING</strong></div>
+          </div>
         </div>
-      </div>
-      <div class="sol-card">
-        <div class="sol-media" style="background-image:url('assets/img/machine-maintenance.jpg');"></div>
-        <div class="sol-body">
-          <div class="sol-num">Machine Maintenance</div>
-          <h3>Spend less time waiting on machines</h3>
-          <p>Keep an eye on machine performance, schedule maintenance and catch warning signs before a small issue becomes a costly stoppage.</p>
-          <a href="#">Explore machine maintenance →</a>
-        </div>
-      </div>
-      <div class="sol-card">
-        <div class="sol-media" style="background-image:url('assets/img/production-planning.jpg');"></div>
-        <div class="sol-body">
-          <div class="sol-num">Production Planning</div>
-          <h3>Make the plan fit the floor</h3>
-          <p>Schedule orders by line, section and location, then update the plan quickly when people, machines or priorities change.</p>
-          <a href="#">Explore production planning →</a>
-        </div>
-      </div>
+      </article>
     </div>
   </div>
 </section>
 
-<section id="workflow" class="workflow-section reveal">
-  <video class="workflow-bg-video" autoplay muted loop playsinline aria-hidden="true">
+<section id="clients" class="clients-section reveal" data-nav-target="clients">
+  <video class="hero-bg-video" autoplay muted loop playsinline aria-hidden="true" poster="assets/img/factory-aerial.jpg">
     <source src="assets/video/factory-loop.mp4" type="video/mp4">
   </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-watermark-mask" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="section-head">
-      <p class="kicker">The Track Tech / Trackwell workflow</p>
-      <h2>Follow an order from the first roll of fabric to shipment</h2>
-      <p>Everyone sees the same journey: materials, orders, work in progress, production updates and quality checks, all in one place.</p>
+    <div class="section-head clients-intro">
+      <p class="kicker">Key customers</p>
+      <h2>Technology trusted by apparel makers</h2>
+      <p>From established manufacturing groups to specialist apparel exporters, Track Tech brings production, quality and order visibility together for teams on the factory floor.</p>
     </div>
-    <ol class="workflow-list">
-      <li><span class="workflow-number">01</span><div><h3><svg class="workflow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5v-9Z"/><path d="m3 7.5 9 4.5 9-4.5M12 12v9M8 5l9 4.5M7 14.5h3M8.5 13v3"/></svg>Material Receiving</h3><p>Fabric and other materials are checked in as they arrive.</p></div></li>
-      <li><span class="workflow-number">02</span><div><h3><svg class="workflow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h10l4 4v14H5V3Z"/><path d="M15 3v5h4M8 13l2 2 5-5M8 18h8"/></svg>GRN</h3><p>The team records what came in and confirms the quantities.</p></div></li>
-      <li><span class="workflow-number">03</span><div><h3><svg class="workflow-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5M8 10.5l2 2 3.5-4"/></svg>Fabric Inspection &amp; Store</h3><p>Each fabric roll is checked before it is put away in the store.</p></div></li>
-      <li><span class="workflow-number">04</span><div><h3><svg class="workflow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8c3-4 6 4 9 0s6 4 9 0M3 13c3-4 6 4 9 0s6 4 9 0M3 18c3-4 6 4 9 0s6 4 9 0"/></svg>Relaxation</h3><p>The fabric rests and settles properly before cutting.</p></div></li>
-      <li><span class="workflow-number">05</span><div><h3><svg class="workflow-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M9 15h6M12 15v3"/></svg>Reservation &amp; Issue</h3><p>The right fabric is set aside for the order and issued to production.</p></div></li>
-      <li class="workflow-highlight"><span class="workflow-number">06</span><div><h3><svg class="workflow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h14M13 7l5 5-5 5M4 5h6M4 19h6"/></svg>Order Creation <em>SAP → Trackwell</em></h3><p>Order details from SAP, including quantity, size ratio and delivery date, are created in Trackwell.</p></div></li>
-      <li><span class="workflow-number">07</span><div><h3><svg class="workflow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h5M8 16h8"/></svg>Pattern &amp; Marker</h3><p>The CAD team prepares the pattern and lays out the marker for cutting.</p></div></li>
-      <li><span class="workflow-number">08</span><div><h3><svg class="workflow-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><path d="m8 7 12 5-12 5M8 7l12-5M8 17l12 5"/></svg>Cutting</h3><p>The marker guides the cut, including end bits and any recutting needed.</p></div></li>
-      <li class="workflow-highlight"><span class="workflow-number">09</span><div><h3><svg class="workflow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h2v2h-2zM18 14h2v2h-2zM14 18h2v2h-2zM18 18h2v2h-2z"/></svg>Bundle / QR Tracking</h3><p>Cut pieces are bundled, scanned and followed as they move to the next stage.</p></div></li>
-      <li class="workflow-highlight"><span class="workflow-number">10</span><div><h3><svg class="workflow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V9l4-4 4 4v10M12 19V7l4-3 4 3v12M2 19h20"/><path d="M7 13h2M7 16h2M15 11h2M15 14h2"/></svg>Sewing / Production <em>Inline → Mid → End</em></h3><p>Teams update output and defects as the bundle moves through each sewing stage.</p></div></li>
-      <li><span class="workflow-number">11</span><div><h3><svg class="workflow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 8h16"/><circle cx="12" cy="14" r="3.5"/><path d="M7 6h.01M10 6h.01"/></svg>Washing / Laser</h3><p>Garments go through the wash or laser process the buyer has requested.</p></div></li>
-      <li><span class="workflow-number">12</span><div><h3><svg class="workflow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16M6 19V9l6-4 6 4v10M9 19v-5h6v5M8 10h8"/></svg>Finishing</h3><p>Trimming, ironing, measurement and final inspection happen here, along with any rework.</p></div></li>
-      <li><span class="workflow-number">13</span><div><h3><svg class="workflow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5v-9Z"/><path d="m3 7.5 9 4.5 9-4.5M12 12v9M8 5l8 4"/></svg>Packing</h3><p>Finished pieces are folded, bagged, tagged and packed by order or buyer.</p></div></li>
-      <li class="workflow-final"><span class="workflow-number">14</span><div><h3><svg class="workflow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v11H3zM14 10h4l3 3v4h-7zM6 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM18 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></svg>Shipment</h3><p>The order is ready to leave the factory and head to the customer.</p></div></li>
-    </ol>
-  </div>
-</section>
-
-<section id="impact" class="impact reveal" style="background-image:url('assets/img/dashboard-impact.jpg');">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="kicker" style="color:var(--cyan);">The difference it makes</p>
-      <h2>Less chasing. More control on the factory floor.</h2>
-      <p>These are the kinds of improvements teams have reported after bringing their daily production work into one system.</p>
-    </div>
-    <div class="impact-grid">
-      <div class="impact-card"><b class="counter" data-target="37" data-suffix="%">0%</b><span>More production efficiency</span></div>
-      <div class="impact-card"><b class="counter" data-target="28" data-suffix="%">0%</b><span>Less material waste</span></div>
-      <div class="impact-card"><b class="counter" data-target="99.2" data-decimals="1" data-suffix="%">0%</b><span>Average quality score</span></div>
-    </div>
-    <div style="margin-top:44px;">
-      <p class="kicker" style="color:var(--cyan);margin-bottom:16px;">Teams we work with</p>
-      <div class="trust-row">
-        <span>Arvind Ltd</span><span>Shahi Exports</span><span>Armstrong Knitting Mills</span><span>Sahana Clothing</span>
+    <div class="client-showcase">
+      <div class="client-roster">
+        <div class="client-roster-head">
+          <span>Customer directory</span>
+          <strong>Key customers</strong>
+        </div>
+        <div class="client-logos" aria-label="Key customers">
+          <div class="client-mark" role="img" aria-label="Shahi"><svg class="client-logo" viewBox="0 0 200 80" aria-hidden="true"><use href="assets/img/client-logos.svg#shahi"></use></svg></div>
+          <div class="client-mark" role="img" aria-label="Arvind, Fashioning Possibilities"><svg class="client-logo" viewBox="0 0 200 80" aria-hidden="true"><use href="assets/img/client-logos.svg#arvind"></use></svg></div>
+          <div class="client-mark" role="img" aria-label="PDS"><svg class="client-logo" viewBox="0 0 200 80" aria-hidden="true"><use href="assets/img/client-logos.svg#pds"></use></svg></div>
+          <div class="client-mark" role="img" aria-label="Texport"><svg class="client-logo" viewBox="0 0 200 80" aria-hidden="true"><use href="assets/img/client-logos.svg#texport"></use></svg></div>
+          <div class="client-mark" role="img" aria-label="Penguin Apparels (P) Ltd"><svg class="client-logo" viewBox="0 0 200 80" aria-hidden="true"><use href="assets/img/client-logos.svg#penguin"></use></svg></div>
+          <div class="client-mark" role="img" aria-label="Modelarna Exports"><svg class="client-logo" viewBox="0 0 200 80" aria-hidden="true"><use href="assets/img/client-logos.svg#modelarna"></use></svg></div>
+          <div class="client-mark" role="img" aria-label="Armstrong, The name for Quality"><svg class="client-logo" viewBox="0 0 200 80" aria-hidden="true"><use href="assets/img/client-logos.svg#armstrong"></use></svg></div>
+          <div class="client-mark" role="img" aria-label="Sahana"><svg class="client-logo" viewBox="0 0 200 80" aria-hidden="true"><use href="assets/img/client-logos.svg#sahana"></use></svg></div>
+          <div class="client-mark" role="img" aria-label="Trendy Fits"><svg class="client-logo" viewBox="0 0 200 80" aria-hidden="true"><use href="assets/img/client-logos.svg#trendyfits"></use></svg></div>
+          <div class="client-mark" role="img" aria-label="Mehala, Committed to Customer Delight"><svg class="client-logo" viewBox="0 0 200 80" aria-hidden="true"><use href="assets/img/client-logos.svg#mehala"></use></svg></div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="banner" style="background-image:url('assets/img/factory-aerial.jpg');">
-  <div class="wrap banner-inner">
-    <p class="kicker">One view of the work</p>
-    <h2>Keep the floor, the office and the loading dock in step</h2>
-    <p class="sub">When everyone works from the same information, small delays are easier to catch and orders are easier to keep on track.</p>
-  </div>
-</section>
-
-<section id="stories" class="stories-section reveal">
-  <video class="section-video" autoplay muted loop playsinline aria-hidden="true">
-    <source src="assets/video/factory-loop.mp4" type="video/mp4">
-  </video>
-  <div class="section-video-overlay"></div>
-  <div class="wrap section-content">
-    <div class="section-head">
-      <p class="kicker">From the factory floor</p>
-      <h2>Why teams keep using Track Tech</h2>
-    </div>
-    <div class="quotes">
-      <div class="quote-card">
-        <p class="q">"Track Tech gives us one place to follow an order. The team can move from order details to production, quality and progress without jumping between different systems."</p>
-        <div class="who"><b>Paul Raj</b><span>Head of IT, Armstrong Knitting Mills</span></div>
-      </div>
-      <div class="quote-card">
-        <p class="q">"The quality team can record checks as they happen and act on issues quickly. We can keep our standards high without slowing the line down."</p>
-        <div class="who"><b>Suresh</b><span>Head of Operations, Sahana Clothing</span></div>
-      </div>
+    <div class="client-metrics" aria-label="Track Tech company facts">
+      <div class="client-metric"><strong>2</strong><span>Countries</span></div>
+      <div class="client-metric"><strong>74+</strong><span>Factories</span></div>
+      <div class="client-metric"><strong>36</strong><span>Professionals</span></div>
+      <div class="client-metric"><strong>100%</strong><span>Customer focused</span></div>
     </div>
   </div>
 </section>
 
-<section id="contact" class="contact-section reveal">
+<section id="contact" class="contact-section reveal" data-nav-target="contact">
   <video class="section-video" autoplay muted loop playsinline aria-hidden="true">
     <source src="assets/video/factory-loop.mp4" type="video/mp4">
   </video>
   <div class="section-video-overlay"></div>
   <div class="wrap section-content contact-grid">
     <div>
-      <p class="kicker" style="color:var(--cyan-dim);">Let's talk</p>
+      <p class="kicker">Let's talk</p>
       <h2 style="font-size:clamp(1.6rem,2.6vw,2.2rem);margin:0 0 14px;">Want a clearer view of your factory?</h2>
-      <p style="color:#C3D4D8;max-width:50ch;">Tell us how your lines work today. We will show you where Track Tech can remove the manual follow-up and make the next step easier.</p>
+      <p class="contact-lead">Tell us how your lines work today. We will show you where Track Tech can remove the manual follow-up and make the next step easier.</p>
       <div class="hero-ctas" style="margin-top:26px;">
-        <a class="btn-primary" style="background:var(--navy);color:var(--white);" href="mailto:sales@tracktechsolutions.com">Talk to sales</a>
-        <a class="btn-ghost" style="border-color:#6E8993;color:var(--white);" href="tel:+919650613666">Call +91 96506 13666</a>
+        <a class="btn-primary contact-action-primary" href="mailto:sales@tracktechsolutions.com">Talk to sales</a>
+        <a class="btn-ghost contact-action-secondary" href="tel:+919650613666">Call +91 96506 13666</a>
       </div>
     </div>
     <ul class="contact-list">
@@ -223,18 +260,20 @@
         <p style="max-width:36ch;">Practical software for the people who plan, make, check and ship garments every day.</p>
       </div>
       <div>
-        <h4>Solutions</h4>
+        <h4>Products</h4>
         <ul>
-          <li><a href="#solutions">Quality Control</a></li>
-          <li><a href="#solutions">Production Tracking</a></li>
-          <li><a href="#solutions">Machine Maintenance</a></li>
-          <li><a href="#solutions">Production Planning</a></li>
+          <li><a href="#product-experience" data-product-choice="quality">Quality Control</a></li>
+          <li><a href="#product-experience" data-product-choice="tracking">Production Tracking</a></li>
+          <li><a href="#product-experience" data-product-choice="maintenance">Machine Maintenance</a></li>
+          <li><a href="#product-experience" data-product-choice="fabric">Fabric Optimization</a></li>
+          <li><a href="#product-experience" data-product-choice="planning">Production Planning</a></li>
+          <li><a href="#product-experience" data-product-choice="warehouse">Warehouse Management</a></li>
         </ul>
       </div>
       <div>
         <h4>Company</h4>
         <ul>
-          <li><a href="#stories">Business stories</a></li>
+          <li><a href="#clients">Key clients</a></li>
           <li><a href="#contact">Contact us</a></li>
           <li><a href="mailto:sales@tracktechsolutions.com">sales@tracktechsolutions.com</a></li>
         </ul>
