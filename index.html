@@ -31,16 +31,32 @@
       <li class="nav-products" id="navProducts" data-nav-section="products">
         <button class="nav-products-toggle" id="productsToggle" type="button" aria-expanded="false" aria-controls="productsMenu">Products <span class="nav-chevron" aria-hidden="true"></span></button>
         <div class="products-menu" id="productsMenu" role="menu" aria-label="Products">
-          <a href="#product-experience" class="is-selected" role="menuitem" data-product-choice="quality">Quality Control</a>
-          <a href="#product-experience" role="menuitem" data-product-choice="tracking">Production Tracking</a>
-          <a href="#product-experience" role="menuitem" data-product-choice="maintenance">Machine Maintenance</a>
-          <a href="#product-experience" role="menuitem" data-product-choice="fabric">Fabric Optimization</a>
-          <a href="#product-experience" role="menuitem" data-product-choice="planning">Production Planning</a>
-          <a href="#product-experience" role="menuitem" data-product-choice="warehouse">Warehouse Management</a>
-          <a href="#product-experience" role="menuitem" data-product-choice="trakwel">TrakWel</a>
+          <div class="product-menu-group" data-product-group>
+            <div class="product-menu-heading">
+              <button class="product-menu-parent is-selected" type="button" role="menuitem" data-product-choice="trakwel">TrakWel</button>
+              <button class="product-menu-disclosure" type="button" aria-label="Expand TrakWel products" aria-expanded="false" aria-controls="trakwelMenu"><span class="nav-chevron" aria-hidden="true"></span></button>
+            </div>
+            <div class="product-menu-items" id="trakwelMenu" role="group" aria-label="TrakWel products" hidden>
+              <a href="#product-experience" role="menuitem" data-product-choice="fabric-inventory">Fabric Inventory Management</a>
+              <a href="#product-experience" role="menuitem" data-product-choice="cutting-digitalization">Cutting Room Digitalization</a>
+              <a href="#product-experience" role="menuitem" data-product-choice="tracking">Production Tracking</a>
+              <a href="#product-experience" role="menuitem" data-product-choice="quality">Quality Control</a>
+            </div>
+          </div>
           <a href="#product-experience" role="menuitem" data-product-choice="planwel">PlanWel</a>
           <a href="#product-experience" role="menuitem" data-product-choice="mtrak">mTrak</a>
-          <a href="#product-experience" role="menuitem" data-product-choice="sewlot">SewloT</a>
+          <a href="#product-experience" role="menuitem" data-product-choice="sewiot">SewIoT</a>
+          <div class="product-menu-group" data-product-group>
+            <div class="product-menu-heading">
+              <button class="product-menu-parent" type="button" role="menuitem">Industry Solutions</button>
+              <button class="product-menu-disclosure" type="button" aria-label="Expand Industry Solutions" aria-expanded="false" aria-controls="industrySolutionsMenu"><span class="nav-chevron" aria-hidden="true"></span></button>
+            </div>
+            <div class="product-menu-items" id="industrySolutionsMenu" role="group" aria-label="Industry Solutions" hidden>
+              <a href="#product-experience" role="menuitem" data-product-choice="laundry">Laundry Management</a>
+              <a href="#product-experience" role="menuitem" data-product-choice="jig">Jig Management</a>
+              <a href="#product-experience" role="menuitem" data-product-choice="shrinkage">Shrinkage Testing App</a>
+            </div>
+          </div>
         </div>
       </li>
       <li data-nav-section="clients"><a href="#clients">Clients</a></li>
@@ -145,19 +161,19 @@
     <div class="product-experience" id="product-experience">
       <article class="product-detail" id="product-detail" role="tabpanel" aria-live="polite">
         <div class="product-copy">
-          <p class="product-kicker" id="productKicker">PRODUCT 01 <span>/</span> QUALITY CONTROL</p>
-          <h3 id="productTitle">Quality Control</h3>
-          <p class="product-description" id="productDescription">Record inspections on the line, spot recurring issues and deal with defects before they reach packing or the warehouse.</p>
+          <p class="product-kicker" id="productKicker">PRODUCT 01 <span>/</span> TRAKWEL</p>
+          <h3 id="productTitle">TrakWel</h3>
+          <p class="product-description" id="productDescription">Manufacturing Execution System (MES) for real-time visibility and control across the shop floor, improving efficiency, quality and performance.</p>
           <ol class="product-stages" aria-label="Product workflow">
-            <li><span>01</span><strong id="productStageOne">Inspect</strong></li>
-            <li><span>02</span><strong id="productStageTwo">Flag</strong></li>
-            <li><span>03</span><strong id="productStageThree">Resolve</strong></li>
+            <li><span>01</span><strong id="productStageOne">Track</strong></li>
+            <li><span>02</span><strong id="productStageTwo">Monitor</strong></li>
+            <li><span>03</span><strong id="productStageThree">Improve</strong></li>
           </ol>
           <a class="btn-primary product-cta" href="#contact">Talk to our team</a>
         </div>
-        <div class="product-visual" id="productVisual" data-product="quality">
+        <div class="product-visual" id="productVisual" data-product="trakwel">
           <div class="product-photo">
-            <img id="productImage" src="assets/img/quality-control.jpg" alt="Garment quality inspection on the factory floor">
+            <img id="productImage" src="assets/img/production-tracking.jpg" alt="Live production tracking across garment factory lines">
           </div>
           <div class="product-animation-stage">
             <div class="visual-widget visual-widget--quality" aria-hidden="true">
@@ -200,7 +216,7 @@
               </div>
               <div class="sewlot-metrics"><span><b>124</b> pcs / hr</span><span><b>98%</b> uptime</span></div>
             </div>
-            <div class="visual-status"><span id="productVisualLabel">QUALITY CHECK</span><strong id="productVisualValue">CHECKING</strong></div>
+            <div class="visual-status"><span id="productVisualLabel">SHOP FLOOR</span><strong id="productVisualValue">LIVE VISIBILITY</strong></div>
           </div>
         </div>
       </article>
@@ -283,16 +299,17 @@
       <div>
         <h4>Products</h4>
         <ul>
-          <li><a href="#product-experience" data-product-choice="quality">Quality Control</a></li>
-          <li><a href="#product-experience" data-product-choice="tracking">Production Tracking</a></li>
-          <li><a href="#product-experience" data-product-choice="maintenance">Machine Maintenance</a></li>
-          <li><a href="#product-experience" data-product-choice="fabric">Fabric Optimization</a></li>
-          <li><a href="#product-experience" data-product-choice="planning">Production Planning</a></li>
-          <li><a href="#product-experience" data-product-choice="warehouse">Warehouse Management</a></li>
           <li><a href="#product-experience" data-product-choice="trakwel">TrakWel</a></li>
+          <li><a href="#product-experience" data-product-choice="fabric-inventory">Fabric Inventory Management</a></li>
+          <li><a href="#product-experience" data-product-choice="cutting-digitalization">Cutting Room Digitalization</a></li>
+          <li><a href="#product-experience" data-product-choice="tracking">Production Tracking</a></li>
+          <li><a href="#product-experience" data-product-choice="quality">Quality Control</a></li>
           <li><a href="#product-experience" data-product-choice="planwel">PlanWel</a></li>
           <li><a href="#product-experience" data-product-choice="mtrak">mTrak</a></li>
-          <li><a href="#product-experience" data-product-choice="sewlot">SewloT</a></li>
+          <li><a href="#product-experience" data-product-choice="sewiot">SewIoT</a></li>
+          <li><a href="#product-experience" data-product-choice="laundry">Laundry Management</a></li>
+          <li><a href="#product-experience" data-product-choice="jig">Jig Management</a></li>
+          <li><a href="#product-experience" data-product-choice="shrinkage">Shrinkage Testing App</a></li>
         </ul>
       </div>
       <div>

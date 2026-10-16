@@ -76,65 +76,71 @@ if ('IntersectionObserver' in window && navTargetSections.length) {
 }
 
 const products = {
-  quality: {
-    number: '01', name: 'Quality Control',
-    description: 'Record inspections on the line, spot recurring issues and deal with defects before they reach packing or the warehouse.',
-    stages: ['Inspect', 'Flag', 'Resolve'], image: 'assets/img/quality-control.jpg',
-    alt: 'Garment quality inspection on the factory floor', label: 'QUALITY CHECK', value: 'CHECKING'
-  },
-  tracking: {
-    number: '02', name: 'Production Tracking',
-    description: 'Follow every order as it moves through cutting, sewing and finishing. Give supervisors a live view of output, bottlenecks and what needs attention next.',
-    stages: ['Cutting', 'Sewing', 'Finishing'], image: 'assets/img/machine-maintenance.jpg',
-    alt: 'Production lines visible across a garment factory', label: 'ORDER 4821 / LINE 03', value: 'IN PROGRESS'
-  },
-  maintenance: {
-    number: '03', name: 'Machine Maintenance',
-    description: 'Keep machine health, service schedules and repair history in view. Catch warning signs early and spend less production time waiting on a fix.',
-    stages: ['Monitor', 'Schedule', 'Prevent'], image: 'assets/img/production-tracking.jpg',
-    alt: 'Sewing machine with an integrated monitoring sensor', label: 'MACHINE HEALTH', value: 'RUNNING WELL'
-  },
-  fabric: {
-    number: '04', name: 'Fabric Optimization',
-    description: 'Plan fabric use with accurate markers, roll visibility and material allocation. Reduce avoidable waste while keeping each order supplied.',
-    stages: ['Measure', 'Optimize', 'Allocate'], image: 'assets/img/production-planning.jpg',
-    alt: 'Fabric planning and material layout for garment production', label: 'MATERIAL PLAN', value: 'LAYOUT READY'
-  },
-  planning: {
-    number: '05', name: 'Production Planning',
-    description: 'Balance orders, lines and capacity in one practical plan. When priorities or resources change, update the floor plan before delays spread.',
-    stages: ['Prioritize', 'Schedule', 'Balance'], image: 'assets/img/dashboard-impact.jpg',
-    alt: 'Factory production dashboard displaying planning information', label: 'LINE 03 CAPACITY', value: 'PLAN BALANCED'
-  },
-  warehouse: {
-    number: '06', name: 'Warehouse Management',
-    description: 'Know what material is in stock, where it is stored and what has been issued. Keep receiving, inventory and production replenishment in sync.',
-    stages: ['Receive', 'Locate', 'Dispatch'], image: 'assets/img/factory-aerial.jpg',
-    alt: 'Factory warehouses and loading areas for inventory movement', label: 'STOCK LOCATION', value: 'BIN A-03 READY'
-  },
   trakwel: {
-    number: '07', name: 'TrakWel',
+    number: '01', name: 'TrakWel',
     description: 'Manufacturing Execution System (MES) for real-time visibility and control across the shop floor, improving efficiency, quality and performance.',
     stages: ['Track', 'Monitor', 'Improve'], image: 'assets/img/production-tracking.jpg',
     alt: 'Live production tracking across garment factory lines', label: 'SHOP FLOOR', value: 'LIVE VISIBILITY', visual: 'trakwel'
   },
+  'fabric-inventory': {
+    number: '02', name: 'Fabric Inventory Management',
+    description: 'Track fabric receipts, roll locations and issue quantities from one place. Keep stock accurate and make the right material easy to find before a line needs it.',
+    stages: ['Receive', 'Locate', 'Issue'], image: 'assets/img/fabric-inventory-management.png',
+    alt: 'Fabric inventory management illustration showing fabric rolls, stock scanning and inventory details', label: 'FABRIC STOCK', value: 'ROLLS IN VIEW', visual: 'fabric-inventory', imageOnly: true
+  },
+  'cutting-digitalization': {
+    number: '03', name: 'Cutting Room Digitalization',
+    description: 'Digitise cutting-room planning and progress, from marker preparation through bundle handoff. Give teams a clearer view of material use and work in progress.',
+    stages: ['Prepare', 'Cut', 'Handoff'], image: 'assets/img/cutting-room-digitalization.png',
+    alt: 'Digital cutting room with marker planning, automated cutting and finished fabric bundles', label: 'CUTTING ROOM', value: 'WORK IN VIEW', visual: 'cutting-digitalization', imageOnly: true
+  },
+  tracking: {
+    number: '04', name: 'Production Tracking',
+    description: 'Follow each order through cutting, sewing and finishing. Give supervisors a live view of output, bottlenecks and what needs attention next.',
+    stages: ['Cutting', 'Sewing', 'Finishing'], image: 'assets/img/product-tracking.png',
+    alt: 'Production tracking dashboard showing order progress across garment factory stages', label: 'ORDER 4821 / LINE 03', value: 'IN PROGRESS', visual: 'tracking', imageOnly: true
+  },
+  quality: {
+    number: '05', name: 'Quality Control',
+    description: 'Record inspections on the line, spot recurring issues and deal with defects before they reach packing or the warehouse.',
+    stages: ['Inspect', 'Flag', 'Resolve'], image: 'assets/img/quality-control.png',
+    alt: 'Garment quality control inspection and defect tracking', label: 'QUALITY CHECK', value: 'CHECKING', visual: 'quality', imageOnly: true
+  },
   planwel: {
-    number: '08', name: 'PlanWel',
+    number: '06', name: 'PlanWel',
     description: 'Advanced planning and scheduling to balance capacity, manage orders and keep delivery commitments on track with dynamic schedules.',
-    stages: ['Plan', 'Schedule', 'Deliver'], image: 'assets/img/production-planning.jpg',
-    alt: 'Production plan and schedule for garment manufacturing', label: 'CAPACITY PLAN', value: 'SCHEDULED', visual: 'planning'
+    stages: ['Plan', 'Schedule', 'Deliver'], image: 'assets/img/planwel.png',
+    alt: 'PlanWel production planning and scheduling interface', label: 'CAPACITY PLAN', value: 'SCHEDULED', visual: 'planwel', imageOnly: true
   },
   mtrak: {
-    number: '09', name: 'mTrak',
+    number: '07', name: 'mTrak',
     description: 'Machine maintenance management that maximizes machine uptime, reduces downtime and extends equipment life with preventive maintenance.',
-    stages: ['Monitor', 'Maintain', 'Optimize'], image: 'assets/img/quality-control.jpg',
-    alt: 'Connected sewing machines monitored across the factory floor', label: 'MACHINE HEALTH', value: 'RUNNING WELL', visual: 'maintenance'
+    stages: ['Monitor', 'Maintain', 'Optimize'], image: 'assets/img/mTrak.png',
+    alt: 'mTrak machine maintenance management interface', label: 'MACHINE HEALTH', value: 'RUNNING WELL', visual: 'mtrak', imageOnly: true
   },
-  sewlot: {
-    number: '10', name: 'SewloT',
+  sewiot: {
+    number: '08', name: 'SewIoT',
     description: 'IoT for sewing lines. Connect the sewing floor with technology to monitor, analyze and improve productivity.',
     stages: ['Connect', 'Analyze', 'Improve'], image: 'assets/img/dashboard-impact.jpg',
     alt: 'Sewing line productivity dashboard with live factory metrics', label: 'SEWING LINE', value: 'CONNECTED', visual: 'sewlot'
+  },
+  laundry: {
+    number: '09', name: 'Laundry Management',
+    description: 'Follow garment lots through washing, treatment and finishing. Track process status and quality checks to keep laundry work aligned with order requirements.',
+    stages: ['Receive', 'Process', 'Inspect'], image: 'assets/img/laundry-management.png',
+    alt: 'Laundry management workflow for garment processing and finishing', label: 'LAUNDRY FLOW', value: 'LOT IN PROCESS', visual: 'laundry', imageOnly: true
+  },
+  jig: {
+    number: '10', name: 'Jig Management',
+    description: 'Organize sewing aids and jigs by style, line and order. Make availability and readiness visible so teams can reduce setup delays and keep production moving.',
+    stages: ['Register', 'Assign', 'Verify'], image: 'assets/img/Jig-management.png',
+    alt: 'Jig management illustration showing organized jig storage, tracking and maintenance', label: 'JIG READINESS', value: 'AVAILABLE', visual: 'jig', imageOnly: true
+  },
+  shrinkage: {
+    number: '11', name: 'Shrinkage Testing App',
+    description: 'Record fabric measurements before and after washing, calculate shrinkage and keep test results linked to the material lot for consistent quality decisions.',
+    stages: ['Measure', 'Calculate', 'Review'], image: 'assets/img/shrinkage-testing-app.png',
+    alt: 'Shrinkage testing app for recording fabric measurements and test results', label: 'SHRINKAGE TEST', value: 'RESULT RECORDED', visual: 'shrinkage', imageOnly: true
   }
 };
 
@@ -156,6 +162,7 @@ const selectProduct = (productId) => {
   productImage.src = product.image;
   productImage.alt = product.alt;
   productVisual.dataset.product = product.visual || productId;
+  productVisual.querySelector('.product-animation-stage').hidden = Boolean(product.imageOnly);
   document.getElementById('productStageOne').textContent = product.stages[0];
   document.getElementById('productStageTwo').textContent = product.stages[1];
   document.getElementById('productStageThree').textContent = product.stages[2];
@@ -176,9 +183,30 @@ productChoices.forEach(choice => {
   choice.addEventListener('click', () => {
     selectProduct(choice.dataset.productChoice);
     setActiveNavSection('products');
-    navProducts?.classList.remove('is-open');
-    productsToggle?.setAttribute('aria-expanded', 'false');
+    if (choice.tagName === 'A') {
+      navProducts?.classList.remove('is-open');
+      productsToggle?.setAttribute('aria-expanded', 'false');
+    } else {
+      productDetail?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
   });
+});
+
+const toggleProductGroup = (control) => {
+  const group = control.closest('[data-product-group]');
+  const items = group?.querySelector('.product-menu-items');
+  const disclosure = group?.querySelector('.product-menu-disclosure');
+  if (!group || !items || !disclosure) return;
+
+  const isExpanded = group.classList.contains('is-open');
+  group.classList.toggle('is-open', !isExpanded);
+  items.hidden = isExpanded;
+  disclosure.setAttribute('aria-expanded', String(!isExpanded));
+  disclosure.setAttribute('aria-label', `${isExpanded ? 'Expand' : 'Collapse'} ${group.querySelector('.product-menu-parent').textContent.trim()}`);
+};
+
+document.querySelectorAll('.product-menu-parent, .product-menu-disclosure').forEach(control => {
+  control.addEventListener('click', () => toggleProductGroup(control));
 });
 
 // Cursor glow follows pointer (desktop only, handled in CSS media query)
