@@ -80,7 +80,7 @@ const products = {
     number: '01', name: 'TrakWel',
     description: 'Manufacturing Execution System (MES) for real-time visibility and control across the shop floor, improving efficiency, quality and performance.',
     stages: ['Track', 'Monitor', 'Improve'], image: 'assets/img/production-tracking.jpg',
-    alt: 'Live production tracking across garment factory lines', label: 'SHOP FLOOR', value: 'LIVE VISIBILITY', visual: 'trakwel'
+    alt: 'Live production tracking across garment factory lines', label: '', value: '', visual: 'trakwel'
   },
   'fabric-inventory': {
     number: '02', name: 'Fabric Inventory Management',
@@ -121,8 +121,8 @@ const products = {
   sewiot: {
     number: '08', name: 'SewIoT',
     description: 'IoT for sewing lines. Connect the sewing floor with technology to monitor, analyze and improve productivity.',
-    stages: ['Connect', 'Analyze', 'Improve'], image: 'assets/img/dashboard-impact.jpg',
-    alt: 'Sewing line productivity dashboard with live factory metrics', label: 'SEWING LINE', value: 'CONNECTED', visual: 'sewlot'
+    stages: ['Connect', 'Analyze', 'Improve'], image: 'assets/img/sew-IoT.png',
+    alt: 'SewIoT smart sewing line and connected factory real-time monitoring', label: 'SEWING LINE', value: 'CONNECTED', visual: 'sewiot', imageOnly: true
   },
   laundry: {
     number: '09', name: 'Laundry Management',
@@ -162,12 +162,19 @@ const selectProduct = (productId) => {
   productImage.src = product.image;
   productImage.alt = product.alt;
   productVisual.dataset.product = product.visual || productId;
+  productDetail.dataset.product = product.visual || productId;
   productVisual.querySelector('.product-animation-stage').hidden = Boolean(product.imageOnly);
   document.getElementById('productStageOne').textContent = product.stages[0];
   document.getElementById('productStageTwo').textContent = product.stages[1];
   document.getElementById('productStageThree').textContent = product.stages[2];
-  document.getElementById('productVisualLabel').textContent = product.label;
-  document.getElementById('productVisualValue').textContent = product.value;
+
+  const visualStatus = productVisual.querySelector('.visual-status');
+  if (visualStatus) {
+    const hasStatus = Boolean(product.label || product.value);
+    visualStatus.style.display = hasStatus ? '' : 'none';
+    document.getElementById('productVisualLabel').textContent = product.label || '';
+    document.getElementById('productVisualValue').textContent = product.value || '';
+  }
 
   productChoices.forEach(choice => {
     choice.classList.toggle('is-selected', choice.dataset.productChoice === productId);

@@ -1,340 +1,495 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Track Tech Solution | Software for Garment Factories</title>
-<meta name="description" content="Track materials, orders, production and quality in one clear view, from the first roll of fabric to the final shipment.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Track Tech Solution | Software for Garment Factories</title>
+  <meta name="description"
+    content="Track materials, orders, production and quality in one clear view, from the first roll of fabric to the final shipment.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/img/track-tech-logo.png">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
 
-<div class="cursor-glow" id="cursorGlow"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
 
-<nav id="siteNav">
-  <div class="nav-inner">
-    <a class="brand-lockup" href="#about" aria-label="Track Tech Solution home">
-      <img class="brand-mark" src="assets/img/track-tech-mark.svg" alt="">
-      <span class="wordmark">Track<span>Tech</span> Solution</span>
-    </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
-    <ul class="nav-links" id="navLinks">
-      <li class="nav-about" id="navAbout" data-nav-section="about">
-        <button class="nav-about-toggle" id="aboutToggle" type="button" aria-expanded="false" aria-controls="aboutMenu">About <span class="nav-chevron" aria-hidden="true"></span></button>
-        <div class="products-menu" id="aboutMenu" role="menu" aria-label="About Track Tech">
-          <a href="#company-profile" role="menuitem">Track Tech Solutions</a>
-          <a href="#leadership" role="menuitem">Our Leadership Team</a>
-        </div>
-      </li>
-      <li class="nav-products" id="navProducts" data-nav-section="products">
-        <button class="nav-products-toggle" id="productsToggle" type="button" aria-expanded="false" aria-controls="productsMenu">Products <span class="nav-chevron" aria-hidden="true"></span></button>
-        <div class="products-menu" id="productsMenu" role="menu" aria-label="Products">
-          <div class="product-menu-group" data-product-group>
-            <div class="product-menu-heading">
-              <button class="product-menu-parent is-selected" type="button" role="menuitem" data-product-choice="trakwel">TrakWel</button>
-              <button class="product-menu-disclosure" type="button" aria-label="Expand TrakWel products" aria-expanded="false" aria-controls="trakwelMenu"><span class="nav-chevron" aria-hidden="true"></span></button>
-            </div>
-            <div class="product-menu-items" id="trakwelMenu" role="group" aria-label="TrakWel products" hidden>
-              <a href="#product-experience" role="menuitem" data-product-choice="fabric-inventory">Fabric Inventory Management</a>
-              <a href="#product-experience" role="menuitem" data-product-choice="cutting-digitalization">Cutting Room Digitalization</a>
-              <a href="#product-experience" role="menuitem" data-product-choice="tracking">Production Tracking</a>
-              <a href="#product-experience" role="menuitem" data-product-choice="quality">Quality Control</a>
-            </div>
+  <nav id="siteNav">
+    <div class="nav-inner">
+      <a class="brand-lockup" href="#about" aria-label="Track Tech Solution home">
+        <img class="brand-mark" src="assets/img/track-tech-logo.png" alt="Track Tech Solution Logo">
+        <span class="wordmark">Track<span>Tech</span> Solution</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li class="nav-about" id="navAbout" data-nav-section="about">
+          <button class="nav-about-toggle" id="aboutToggle" type="button" aria-expanded="false"
+            aria-controls="aboutMenu">About <span class="nav-chevron" aria-hidden="true"></span></button>
+          <div class="products-menu" id="aboutMenu" role="menu" aria-label="About Track Tech">
+            <a href="#company-profile" role="menuitem">Track Tech Solutions</a>
+            <a href="#leadership" role="menuitem">Our Leadership Team</a>
           </div>
-          <a href="#product-experience" role="menuitem" data-product-choice="planwel">PlanWel</a>
-          <a href="#product-experience" role="menuitem" data-product-choice="mtrak">mTrak</a>
-          <a href="#product-experience" role="menuitem" data-product-choice="sewiot">SewIoT</a>
-          <div class="product-menu-group" data-product-group>
-            <div class="product-menu-heading">
-              <button class="product-menu-parent" type="button" role="menuitem">Industry Solutions</button>
-              <button class="product-menu-disclosure" type="button" aria-label="Expand Industry Solutions" aria-expanded="false" aria-controls="industrySolutionsMenu"><span class="nav-chevron" aria-hidden="true"></span></button>
-            </div>
-            <div class="product-menu-items" id="industrySolutionsMenu" role="group" aria-label="Industry Solutions" hidden>
-              <a href="#product-experience" role="menuitem" data-product-choice="laundry">Laundry Management</a>
-              <a href="#product-experience" role="menuitem" data-product-choice="jig">Jig Management</a>
-              <a href="#product-experience" role="menuitem" data-product-choice="shrinkage">Shrinkage Testing App</a>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li data-nav-section="clients"><a href="#clients">Clients</a></li>
-      <li data-nav-section="contact"><a href="#contact">Contact</a></li>
-    </ul>
-    <a class="nav-cta" href="#contact">Book a demo</a>
-  </div>
-</nav>
-
-<header id="about" class="hero" data-nav-target="about">
-  <video class="hero-bg-video" id="heroVideo" autoplay muted loop playsinline poster="assets/img/factory-aerial.jpg">
-    <source src="assets/video/factory-loop.mp4" type="video/mp4">
-  </video>
-  <div class="hero-overlay"></div>
-  <div class="hero-watermark-mask" aria-hidden="true"></div>
-  <div class="wrap hero-grid">
-    <div>
-      <p class="eyebrow">Built for the way garment factories work</p>
-      <h1>A clearer way to run your factory</h1>
-      <p>From the first roll of fabric to the final shipment, Track Tech helps your team see what is happening, fix issues sooner and keep every order moving.</p>
-      <div class="hero-ctas">
-        <a class="btn-primary" href="#contact">Book a demo</a>
-        <a class="btn-ghost" href="#products">Explore products</a>
-      </div>
-    </div>
-  </div>
-
-</header>
-
-<section id="company-profile" class="company-section reveal" data-nav-target="about">
-  <video class="hero-bg-video" autoplay muted loop playsinline aria-hidden="true" poster="assets/img/factory-aerial.jpg">
-    <source src="assets/video/factory-loop.mp4" type="video/mp4">
-  </video>
-  <div class="hero-overlay"></div>
-  <div class="hero-watermark-mask" aria-hidden="true"></div>
-  <div class="wrap section-content company-layout">
-    <div class="company-copy">
-      <p class="kicker">Track Tech Solutions <span> / EST. 2019</span></p>
-      <h2>Digital clarity for the people who make apparel</h2>
-      <p>Track Tech Solutions builds practical digital tools for apparel manufacturing. The platform connects production, quality, planning, materials and factory-floor teams, helping people see what is happening and act while there is still time to improve the outcome.</p>
-      <p>Since 2019, the team has focused on bringing useful technology closer to everyday factory work, supporting implementation across more than 74 factories in two countries.</p>
-      <a class="company-link" href="https://www.linkedin.com/company/track-tech-solution/about/" target="_blank" rel="noopener">Company profile on LinkedIn <span aria-hidden="true">↗</span></a>
-    </div>
-    <div class="company-facts" aria-label="Track Tech Solutions at a glance">
-      <div><strong>2019</strong><span>Established</span></div>
-      <div><strong>74+</strong><span>Factories supported</span></div>
-      <div><strong>02</strong><span>Countries</span></div>
-      <div><strong>36</strong><span>Professionals</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="leadership" class="leadership-section reveal" data-nav-target="about">
-  <video class="hero-bg-video" autoplay muted loop playsinline aria-hidden="true" poster="assets/img/factory-aerial.jpg">
-    <source src="assets/video/factory-loop.mp4" type="video/mp4">
-  </video>
-  <div class="hero-overlay"></div>
-  <div class="hero-watermark-mask" aria-hidden="true"></div>
-  <div class="wrap section-content">
-    <div class="section-head leadership-intro">
-      <p class="kicker">Our leadership team</p>
-      <h2>Built around manufacturing, operations and technology</h2>
-      <p>Three perspectives working together to make factory software practical, dependable and useful on the floor.</p>
-    </div>
-    <div class="leadership-grid">
-      <article class="leader-profile">
-        <div class="leader-mark" aria-hidden="true">GM</div>
-        <p class="leader-role">CHIEF EXECUTIVE OFFICER</p>
-        <h3>Gopinath M. (Muniraj)</h3>
-        <p class="leader-bio">Gopinath's career spans apparel manufacturing and digital solutions, including regional sales leadership at Coats Digital and roles associated with Arvind Limited and K Mohan Exports. At Track Tech, he leads the company's direction and its focus on bringing technology into everyday factory operations.</p>
-        <a href="https://rocketreach.co/gopinath-muniraj-email_598095225" target="_blank" rel="noopener">Professional profile <span aria-hidden="true">↗</span></a>
-      </article>
-      <article class="leader-profile">
-        <div class="leader-mark" aria-hidden="true">LB</div>
-        <p class="leader-role">CHIEF OPERATING OFFICER</p>
-        <h3>Lebinesh Balan</h3>
-        <p class="leader-bio">Lebinesh focuses on turning strategy into consistent delivery: aligning customer implementation, teams and day-to-day operations. His work as COO supports smooth adoption of Track Tech across factory environments and keeps customer needs connected to execution.</p>
-        <a href="https://in.linkedin.com/in/lebinesh-balan-a2521637" target="_blank" rel="noopener">LinkedIn profile <span aria-hidden="true">↗</span></a>
-      </article>
-      <article class="leader-profile">
-        <div class="leader-mark" aria-hidden="true">DR</div>
-        <p class="leader-role">CHIEF TECHNOLOGY OFFICER</p>
-        <h3>Deepak Rajkumar</h3>
-        <p class="leader-bio">Deepak guides the technology behind the platform, with a focus on reliable product engineering, useful integrations and clear information for factory teams. As CTO, he helps turn complex manufacturing workflows into software people can use with confidence.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="products" class="products-section reveal" data-nav-target="products">
-  <video class="hero-bg-video" autoplay muted loop playsinline aria-hidden="true">
-    <source src="assets/video/factory-loop.mp4" type="video/mp4">
-  </video>
-  <div class="hero-overlay"></div>
-  <div class="hero-watermark-mask" aria-hidden="true"></div>
-  <div class="wrap section-content">
-    <div class="section-head">
-      <p class="kicker">What we help with</p>
-      <h2>The tools your factory team needs, in one place</h2>
-      <p>Use the modules you need today, then connect the rest as your operation grows. Together, they give your team a clear view from fabric receiving to finished goods.</p>
-    </div>
-    <div class="product-experience" id="product-experience">
-      <article class="product-detail" id="product-detail" role="tabpanel" aria-live="polite">
-        <div class="product-copy">
-          <p class="product-kicker" id="productKicker">PRODUCT 01 <span>/</span> TRAKWEL</p>
-          <h3 id="productTitle">TrakWel</h3>
-          <p class="product-description" id="productDescription">Manufacturing Execution System (MES) for real-time visibility and control across the shop floor, improving efficiency, quality and performance.</p>
-          <ol class="product-stages" aria-label="Product workflow">
-            <li><span>01</span><strong id="productStageOne">Track</strong></li>
-            <li><span>02</span><strong id="productStageTwo">Monitor</strong></li>
-            <li><span>03</span><strong id="productStageThree">Improve</strong></li>
-          </ol>
-          <a class="btn-primary product-cta" href="#contact">Talk to our team</a>
-        </div>
-        <div class="product-visual" id="productVisual" data-product="trakwel">
-          <div class="product-photo">
-            <img id="productImage" src="assets/img/production-tracking.jpg" alt="Live production tracking across garment factory lines">
-          </div>
-          <div class="product-animation-stage">
-            <div class="visual-widget visual-widget--quality" aria-hidden="true">
-              <div class="quality-frame"><i></i><i></i><i></i><i></i><span class="quality-target quality-target--one"></span><span class="quality-target quality-target--two"></span><div class="quality-scan-line"></div></div>
-              <span class="quality-callout quality-callout--one">Seam check <b>PASS</b></span>
-              <span class="quality-callout quality-callout--two">Finish <b>PASS</b></span>
-            </div>
-            <div class="visual-widget visual-widget--tracking" aria-hidden="true">
-              <div class="tracking-route"><span class="route-line"></span><i>01</i><i>02</i><i>03</i><b class="route-runner"></b></div>
-              <div class="tracking-labels"><span>Cutting</span><span>Sewing</span><span>Finishing</span></div>
-            </div>
-            <div class="visual-widget visual-widget--trakwel" aria-hidden="true">
-              <div class="mes-header"><span>LIVE MES</span><b>LINE 03</b></div>
-              <div class="mes-metrics">
-                <div><span>OUTPUT</span><strong>842</strong><small>pieces today</small></div>
-                <div><span>EFFICIENCY</span><strong>92%</strong><small>on target</small></div>
+        </li>
+        <li class="nav-products" id="navProducts" data-nav-section="products">
+          <button class="nav-products-toggle" id="productsToggle" type="button" aria-expanded="false"
+            aria-controls="productsMenu">Products <span class="nav-chevron" aria-hidden="true"></span></button>
+          <div class="products-menu" id="productsMenu" role="menu" aria-label="Products">
+            <div class="product-menu-group" data-product-group>
+              <div class="product-menu-heading">
+                <button class="product-menu-parent is-selected" type="button" role="menuitem"
+                  data-product-choice="trakwel">TrakWel</button>
+                <button class="product-menu-disclosure" type="button" aria-label="Expand TrakWel products"
+                  aria-expanded="false" aria-controls="trakwelMenu"><span class="nav-chevron"
+                    aria-hidden="true"></span></button>
               </div>
-              <div class="mes-order"><span>ORDER 4821</span><strong>78%</strong><i></i></div>
-            </div>
-            <div class="visual-widget visual-widget--maintenance" aria-hidden="true">
-              <div class="machine-gauge"><span class="gauge-ring"></span><span class="gauge-needle"></span><b>86%</b></div>
-            </div>
-            <div class="visual-widget visual-widget--fabric" aria-hidden="true">
-              <div class="fabric-marker"><span></span><span></span><span></span><span></span><span></span></div>
-              <div class="fabric-roll"><i></i><i></i><i></i></div>
-            </div>
-            <div class="visual-widget visual-widget--planning" aria-hidden="true">
-              <div class="planning-board"><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span></div>
-            </div>
-            <div class="visual-widget visual-widget--warehouse" aria-hidden="true">
-              <div class="warehouse-rack"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-              <span class="warehouse-beacon"></span>
-            </div>
-            <div class="visual-widget visual-widget--sewlot" aria-hidden="true">
-              <div class="sewlot-header"><span>IoT NETWORK</span><b>SEWING FLOOR</b></div>
-              <div class="sewlot-stations">
-                <div><i>01</i><b>STATION</b><span>ONLINE</span></div>
-                <div><i>02</i><b>STATION</b><span>ONLINE</span></div>
-                <div><i>03</i><b>STATION</b><span>ONLINE</span></div>
+              <div class="product-menu-items" id="trakwelMenu" role="group" aria-label="TrakWel products" hidden>
+                <a href="#product-experience" role="menuitem" data-product-choice="fabric-inventory">Fabric Inventory
+                  Management</a>
+                <a href="#product-experience" role="menuitem" data-product-choice="cutting-digitalization">Cutting Room
+                  Digitalization</a>
+                <a href="#product-experience" role="menuitem" data-product-choice="tracking">Production Tracking</a>
+                <a href="#product-experience" role="menuitem" data-product-choice="quality">Quality Control</a>
               </div>
-              <div class="sewlot-metrics"><span><b>124</b> pcs / hr</span><span><b>98%</b> uptime</span></div>
             </div>
-            <div class="visual-status"><span id="productVisualLabel">SHOP FLOOR</span><strong id="productVisualValue">LIVE VISIBILITY</strong></div>
+            <a href="#product-experience" role="menuitem" data-product-choice="planwel">PlanWel</a>
+            <a href="#product-experience" role="menuitem" data-product-choice="mtrak">mTrak</a>
+            <a href="#product-experience" role="menuitem" data-product-choice="sewiot">SewIoT</a>
+            <div class="product-menu-group" data-product-group>
+              <div class="product-menu-heading">
+                <button class="product-menu-parent" type="button" role="menuitem">Industry Solutions</button>
+                <button class="product-menu-disclosure" type="button" aria-label="Expand Industry Solutions"
+                  aria-expanded="false" aria-controls="industrySolutionsMenu"><span class="nav-chevron"
+                    aria-hidden="true"></span></button>
+              </div>
+              <div class="product-menu-items" id="industrySolutionsMenu" role="group" aria-label="Industry Solutions"
+                hidden>
+                <a href="#product-experience" role="menuitem" data-product-choice="laundry">Laundry Management</a>
+                <a href="#product-experience" role="menuitem" data-product-choice="jig">Jig Management</a>
+                <a href="#product-experience" role="menuitem" data-product-choice="shrinkage">Shrinkage Testing App</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li data-nav-section="clients"><a href="#clients">Clients</a></li>
+        <li data-nav-section="contact"><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="nav-cta" href="#contact">Experience It Live</a>
+    </div>
+  </nav>
+
+  <header id="about" class="hero" data-nav-target="about">
+    <video class="hero-bg-video" id="heroVideo" autoplay muted loop playsinline poster="assets/img/factory-aerial.jpg">
+      <source src="assets/video/factory-loop.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-watermark-mask" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Built for the way garment factories work</p>
+        <h1>A clearer way to run your factory</h1>
+        <p>From the first roll of fabric to the final shipment, Track Tech helps your team see what is happening, fix
+          issues sooner and keep every order moving.</p>
+        <div class="hero-ctas">
+          <a class="btn-primary" href="#contact">Experience It Live</a>
+          <a class="btn-ghost" href="#products">Explore products</a>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <section id="company-profile" class="company-section reveal" data-nav-target="about">
+    <video class="hero-bg-video" autoplay muted loop playsinline aria-hidden="true"
+      poster="assets/img/factory-aerial.jpg">
+      <source src="assets/video/factory-loop.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-watermark-mask" aria-hidden="true"></div>
+    <div class="wrap section-content company-layout">
+      <div class="company-copy">
+        <p class="kicker">Track Tech Solutions <span> / EST. 2019</span></p>
+        <h2>Digital clarity for the people who make apparel</h2>
+        <p>Track Tech Solutions builds practical digital tools for apparel manufacturing. The platform connects
+          production, quality, planning, materials and factory-floor teams, helping people see what is happening and act
+          while there is still time to improve the outcome.</p>
+        <p>Since 2019, the team has focused on bringing useful technology closer to everyday factory work, supporting
+          implementation across more than 74 factories in two countries.</p>
+        <a class="company-link" href="https://www.linkedin.com/company/track-tech-solution/about/" target="_blank"
+          rel="noopener">Company profile on LinkedIn <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="company-facts" aria-label="Track Tech Solutions at a glance">
+        <div><strong>2019</strong><span>Established</span></div>
+        <div><strong>74+</strong><span>Factories supported</span></div>
+        <div><strong>02</strong><span>Countries</span></div>
+        <div><strong>36</strong><span>Professionals</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="leadership" class="leadership-section reveal" data-nav-target="about">
+    <video class="hero-bg-video" autoplay muted loop playsinline aria-hidden="true"
+      poster="assets/img/factory-aerial.jpg">
+      <source src="assets/video/factory-loop.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-watermark-mask" aria-hidden="true"></div>
+    <div class="wrap section-content">
+      <div class="section-head leadership-intro">
+        <p class="kicker">Our leadership team</p>
+        <h2>Built around manufacturing, operations and technology</h2>
+        <p>Three perspectives working together to make factory software practical, dependable and useful on the floor.
+        </p>
+      </div>
+      <div class="leadership-grid">
+        <article class="leader-profile">
+          <div class="leader-mark" aria-hidden="true">GM</div>
+          <p class="leader-role">CHIEF EXECUTIVE OFFICER</p>
+          <h3>Gopinath M. (Muniraj)</h3>
+          <p class="leader-bio">Gopinath's career spans apparel manufacturing and digital solutions, including regional
+            sales leadership at Coats Digital and roles associated with Arvind Limited and K Mohan Exports. At Track
+            Tech, he leads the company's direction and its focus on bringing technology into everyday factory
+            operations.</p>
+          <a href="https://rocketreach.co/gopinath-muniraj-email_598095225" target="_blank" rel="noopener">Professional
+            profile <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="leader-profile">
+          <div class="leader-mark" aria-hidden="true">LB</div>
+          <p class="leader-role">CHIEF OPERATING OFFICER</p>
+          <h3>Lebinesh Balan</h3>
+          <p class="leader-bio">Lebinesh focuses on turning strategy into consistent delivery: aligning customer
+            implementation, teams and day-to-day operations. His work as COO supports smooth adoption of Track Tech
+            across factory environments and keeps customer needs connected to execution.</p>
+          <a href="https://in.linkedin.com/in/lebinesh-balan-a2521637" target="_blank" rel="noopener">LinkedIn profile
+            <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="leader-profile">
+          <div class="leader-mark" aria-hidden="true">DR</div>
+          <p class="leader-role">CHIEF TECHNOLOGY OFFICER</p>
+          <h3>Deepak Rajkumar</h3>
+          <p class="leader-bio">Deepak guides the technology behind the platform, with a focus on reliable product
+            engineering, useful integrations and clear information for factory teams. As CTO, he helps turn complex
+            manufacturing workflows into software people can use with confidence.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="products" class="products-section reveal" data-nav-target="products">
+    <video class="hero-bg-video" autoplay muted loop playsinline aria-hidden="true">
+      <source src="assets/video/factory-loop.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-watermark-mask" aria-hidden="true"></div>
+    <div class="wrap section-content">
+      <div class="section-head">
+        <p class="kicker">What we help with</p>
+        <h2>The tools your factory team needs, in one place</h2>
+        <p>Use the modules you need today, then connect the rest as your operation grows. Together, they give your team
+          a clear view from fabric receiving to finished goods.</p>
+      </div>
+      <div class="product-experience" id="product-experience">
+        <article class="product-detail" id="product-detail" data-product="trakwel" role="tabpanel" aria-live="polite">
+          <div class="product-copy">
+            <p class="product-kicker" id="productKicker">PRODUCT 01 <span>/</span> TRAKWEL</p>
+            <h3 id="productTitle">TrakWel</h3>
+            <p class="product-description" id="productDescription">Manufacturing Execution System (MES) for real-time
+              visibility and control across the shop floor, improving efficiency, quality and performance.</p>
+            <ol class="product-stages" aria-label="Product workflow">
+              <li><span>01</span><strong id="productStageOne">Track</strong></li>
+              <li><span>02</span><strong id="productStageTwo">Monitor</strong></li>
+              <li><span>03</span><strong id="productStageThree">Improve</strong></li>
+            </ol>
+            <a class="btn-primary product-cta" href="#contact">Talk to our team</a>
+          </div>
+          <div class="product-visual" id="productVisual" data-product="trakwel">
+            <div class="product-photo">
+              <img id="productImage" src="assets/img/production-tracking.jpg"
+                alt="Live production tracking across garment factory lines">
+            </div>
+            <div class="product-animation-stage">
+              <div class="visual-widget visual-widget--quality" aria-hidden="true">
+                <div class="quality-frame"><i></i><i></i><i></i><i></i><span
+                    class="quality-target quality-target--one"></span><span
+                    class="quality-target quality-target--two"></span>
+                  <div class="quality-scan-line"></div>
+                </div>
+                <span class="quality-callout quality-callout--one">Seam check <b>PASS</b></span>
+                <span class="quality-callout quality-callout--two">Finish <b>PASS</b></span>
+              </div>
+              <div class="visual-widget visual-widget--tracking" aria-hidden="true">
+                <div class="tracking-route"><span class="route-line"></span><i>01</i><i>02</i><i>03</i><b
+                    class="route-runner"></b></div>
+                <div class="tracking-labels"><span>Cutting</span><span>Sewing</span><span>Finishing</span></div>
+              </div>
+              <div class="visual-widget visual-widget--trakwel" aria-hidden="true">
+                <div class="mes-metrics">
+                  <div><span>OUTPUT</span><strong>842</strong><small>pieces today</small></div>
+                  <div><span>EFFICIENCY</span><strong>92%</strong><small>on target</small></div>
+                </div>
+                <div class="mes-order"><span>ORDER 4821</span><strong>78%</strong><i></i></div>
+              </div>
+              <div class="visual-widget visual-widget--maintenance" aria-hidden="true">
+                <div class="machine-gauge"><span class="gauge-ring"></span><span class="gauge-needle"></span><b>86%</b>
+                </div>
+              </div>
+              <div class="visual-widget visual-widget--fabric" aria-hidden="true">
+                <div class="fabric-marker"><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="fabric-roll"><i></i><i></i><i></i></div>
+              </div>
+              <div class="visual-widget visual-widget--planning" aria-hidden="true">
+                <div class="planning-board">
+                  <span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span>
+                </div>
+              </div>
+              <div class="visual-widget visual-widget--warehouse" aria-hidden="true">
+                <div class="warehouse-rack"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <span class="warehouse-beacon"></span>
+              </div>
+              <div class="visual-status" style="display: none;"><span id="productVisualLabel"></span><strong
+                  id="productVisualValue"></strong></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="clients" class="clients-section reveal" data-nav-target="clients">
+    <video class="hero-bg-video" autoplay muted loop playsinline aria-hidden="true"
+      poster="assets/img/factory-aerial.jpg">
+      <source src="assets/video/factory-loop.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-watermark-mask" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="section-head clients-intro">
+        <p class="kicker">Key customers</p>
+        <h2>Technology trusted by apparel makers</h2>
+        <p>From established manufacturing groups to specialist apparel exporters, Track Tech brings production, quality
+          and order visibility together for teams on the factory floor.</p>
+      </div>
+      <div class="client-showcase">
+        <div class="client-roster">
+          <div class="client-roster-head">
+            <span>Customer directory</span>
+            <strong>Key customers</strong>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" style="display:none;" aria-hidden="true">
+            <symbol id="shahi" viewBox="0 0 200 80">
+              <rect x="8" y="16" width="184" height="48" fill="#26345f" />
+              <text x="100" y="52" fill="#fff" font-family="Arial,sans-serif" font-size="39" font-weight="800"
+                text-anchor="middle">SHAHI</text>
+            </symbol>
+            <symbol id="arvind" viewBox="0 0 200 80">
+              <text x="100" y="45" fill="#a11e3c" font-family="Georgia,serif" font-size="36"
+                text-anchor="middle">ARVIND</text>
+              <text x="100" y="62" fill="#a11e3c" font-family="Arial,sans-serif" font-size="9" font-weight="700"
+                text-anchor="middle">FASHIONING POSSIBILITIES</text>
+            </symbol>
+            <symbol id="pds" viewBox="0 0 200 80">
+              <circle cx="49" cy="40" r="28" fill="none" stroke="#b42b48" stroke-width="3" />
+              <path d="M49 12v56M39 14v52M29 20v40M19 29v22M59 14v52M69 20v40M79 29v22" stroke="#b42b48"
+                stroke-width="4" />
+              <text x="127" y="53" fill="#17191c" font-family="Georgia,serif" font-size="39"
+                text-anchor="middle">PDS</text>
+            </symbol>
+            <symbol id="texport" viewBox="0 0 200 80">
+              <text x="100" y="51" fill="#243c70" font-family="Arial,sans-serif" font-size="32" font-weight="800"
+                text-anchor="middle">texport</text>
+            </symbol>
+            <symbol id="modelarna" viewBox="0 0 200 80">
+              <ellipse cx="100" cy="31" rx="39" ry="23" fill="none" stroke="#24252a" stroke-width="3" />
+              <path d="M66 31h68M100 9v44" stroke="#24252a" stroke-width="2" />
+              <path d="M82 17 100 10l18 7v24l-18 12-18-12z" fill="#b32333" stroke="#202126" stroke-width="2" />
+              <text x="100" y="72" fill="#17191c" font-family="Arial,sans-serif" font-size="11" font-weight="700"
+                text-anchor="middle">MODELARNA EXPORTS</text>
+            </symbol>
+            <symbol id="armstrong" viewBox="0 0 200 80">
+              <path d="M12 16h30L18 64H0z" fill="#c93635" />
+              <path d="M38 16h150l-24 48H14z" fill="#66676b" />
+              <text x="107" y="42" fill="#fff" font-family="Georgia,serif" font-size="22" font-weight="700"
+                text-anchor="middle">Armstrong</text>
+              <text x="105" y="55" fill="#fff" font-family="Georgia,serif" font-size="9" font-style="italic"
+                text-anchor="middle">The name for Quality</text>
+            </symbol>
+            <symbol id="penguin" viewBox="0 0 200 80">
+              <ellipse cx="36" cy="39" rx="14" ry="25" fill="#fff" stroke="#172331" stroke-width="2.5" />
+              <ellipse cx="36" cy="44" rx="8" ry="13" fill="#172331" />
+              <circle cx="32" cy="28" r="2" fill="#172331" />
+              <circle cx="40" cy="28" r="2" fill="#172331" />
+              <path d="m34 32 5 2-5 2z" fill="#d8a344" />
+              <path d="M23 57h9M39 57h9" stroke="#d8a344" stroke-width="3" stroke-linecap="round" />
+              <text x="119" y="37" fill="#384878" font-family="Arial,sans-serif" font-size="17" font-weight="700"
+                text-anchor="middle">Penguin</text>
+              <text x="119" y="53" fill="#384878" font-family="Arial,sans-serif" font-size="12"
+                text-anchor="middle">Apparels (P) Ltd</text>
+            </symbol>
+            <symbol id="sahana" viewBox="0 0 200 80">
+              <path
+                d="M100 37C83 27 87 11 101 5c12 12 10 24-1 32ZM100 37c1-19 17-25 30-16-3 17-14 23-30 16ZM100 37c18-3 28 10 22 25-17 1-24-9-22-25ZM100 37c-3 18-18 24-30 13 4-17 16-22 30-13ZM100 37C81 40 72 27 79 13c17-1 24 9 21 24Z"
+                fill="#d9a22d" />
+              <text x="100" y="71" fill="#7c735f" font-family="Georgia,serif" font-size="17" letter-spacing="2"
+                text-anchor="middle">SAHANA</text>
+            </symbol>
+            <symbol id="trendyfits" viewBox="0 0 200 80">
+              <rect x="8" y="10" width="184" height="60" fill="#153b73" />
+              <circle cx="34" cy="39" r="14" fill="#f4ca35" />
+              <path d="M27 48V29h13v4h-8v4h7v4h-7v7z" fill="#1d5a9a" />
+              <text x="117" y="41" fill="#fff" font-family="Arial,sans-serif" font-size="19" font-weight="800"
+                text-anchor="middle">TRENDY FITS</text>
+              <text x="117" y="54" fill="#f4ca35" font-family="Arial,sans-serif" font-size="7"
+                text-anchor="middle">COMFORT FASHION FIT</text>
+            </symbol>
+            <symbol id="mehala" viewBox="0 0 200 80">
+              <text x="100" y="42" fill="#df3b3d" font-family="Georgia,serif" font-size="36" font-weight="700"
+                text-anchor="middle">MEHALA</text>
+              <text x="100" y="59" fill="#393238" font-family="Georgia,serif" font-size="10" font-style="italic"
+                text-anchor="middle">Committed to Customer Delight</text>
+            </symbol>
+          </svg>
+          <div class="client-logos" aria-label="Key customers">
+            <div class="client-mark" role="img" aria-label="Shahi"><svg class="client-logo" viewBox="0 0 200 80"
+                aria-hidden="true">
+                <use href="#shahi" xlink:href="#shahi"></use>
+              </svg></div>
+            <div class="client-mark" role="img" aria-label="Arvind, Fashioning Possibilities"><svg class="client-logo"
+                viewBox="0 0 200 80" aria-hidden="true">
+                <use href="#arvind" xlink:href="#arvind"></use>
+              </svg></div>
+            <div class="client-mark" role="img" aria-label="PDS"><svg class="client-logo" viewBox="0 0 200 80"
+                aria-hidden="true">
+                <use href="#pds" xlink:href="#pds"></use>
+              </svg></div>
+            <div class="client-mark" role="img" aria-label="Texport"><svg class="client-logo" viewBox="0 0 200 80"
+                aria-hidden="true">
+                <use href="#texport" xlink:href="#texport"></use>
+              </svg></div>
+            <div class="client-mark" role="img" aria-label="Penguin Apparels (P) Ltd"><svg class="client-logo"
+                viewBox="0 0 200 80" aria-hidden="true">
+                <use href="#penguin" xlink:href="#penguin"></use>
+              </svg></div>
+            <div class="client-mark" role="img" aria-label="Modelarna Exports"><svg class="client-logo"
+                viewBox="0 0 200 80" aria-hidden="true">
+                <use href="#modelarna" xlink:href="#modelarna"></use>
+              </svg></div>
+            <div class="client-mark" role="img" aria-label="Armstrong, The name for Quality"><svg class="client-logo"
+                viewBox="0 0 200 80" aria-hidden="true">
+                <use href="#armstrong" xlink:href="#armstrong"></use>
+              </svg></div>
+            <div class="client-mark" role="img" aria-label="Sahana"><svg class="client-logo" viewBox="0 0 200 80"
+                aria-hidden="true">
+                <use href="#sahana" xlink:href="#sahana"></use>
+              </svg></div>
+            <div class="client-mark" role="img" aria-label="Trendy Fits"><svg class="client-logo" viewBox="0 0 200 80"
+                aria-hidden="true">
+                <use href="#trendyfits" xlink:href="#trendyfits"></use>
+              </svg></div>
+            <div class="client-mark" role="img" aria-label="Mehala, Committed to Customer Delight"><svg
+                class="client-logo" viewBox="0 0 200 80" aria-hidden="true">
+                <use href="#mehala" xlink:href="#mehala"></use>
+              </svg></div>
           </div>
         </div>
-      </article>
+      </div>
+      <div class="client-metrics" aria-label="Track Tech company facts">
+        <div class="client-metric"><strong>2</strong><span>Countries</span></div>
+        <div class="client-metric"><strong>74+</strong><span>Factories</span></div>
+        <div class="client-metric"><strong>36</strong><span>Professionals</span></div>
+        <div class="client-metric"><strong>100%</strong><span>Customer focused</span></div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="clients" class="clients-section reveal" data-nav-target="clients">
-  <video class="hero-bg-video" autoplay muted loop playsinline aria-hidden="true" poster="assets/img/factory-aerial.jpg">
-    <source src="assets/video/factory-loop.mp4" type="video/mp4">
-  </video>
-  <div class="hero-overlay"></div>
-  <div class="hero-watermark-mask" aria-hidden="true"></div>
-  <div class="wrap">
-    <div class="section-head clients-intro">
-      <p class="kicker">Key customers</p>
-      <h2>Technology trusted by apparel makers</h2>
-      <p>From established manufacturing groups to specialist apparel exporters, Track Tech brings production, quality and order visibility together for teams on the factory floor.</p>
-    </div>
-    <div class="client-showcase">
-      <div class="client-roster">
-        <div class="client-roster-head">
-          <span>Customer directory</span>
-          <strong>Key customers</strong>
-        </div>
-        <div class="client-logos" aria-label="Key customers">
-          <div class="client-mark" role="img" aria-label="Shahi"><svg class="client-logo" viewBox="0 0 200 80" aria-hidden="true"><use href="assets/img/client-logos.svg#shahi"></use></svg></div>
-          <div class="client-mark" role="img" aria-label="Arvind, Fashioning Possibilities"><svg class="client-logo" viewBox="0 0 200 80" aria-hidden="true"><use href="assets/img/client-logos.svg#arvind"></use></svg></div>
-          <div class="client-mark" role="img" aria-label="PDS"><svg class="client-logo" viewBox="0 0 200 80" aria-hidden="true"><use href="assets/img/client-logos.svg#pds"></use></svg></div>
-          <div class="client-mark" role="img" aria-label="Texport"><svg class="client-logo" viewBox="0 0 200 80" aria-hidden="true"><use href="assets/img/client-logos.svg#texport"></use></svg></div>
-          <div class="client-mark" role="img" aria-label="Penguin Apparels (P) Ltd"><svg class="client-logo" viewBox="0 0 200 80" aria-hidden="true"><use href="assets/img/client-logos.svg#penguin"></use></svg></div>
-          <div class="client-mark" role="img" aria-label="Modelarna Exports"><svg class="client-logo" viewBox="0 0 200 80" aria-hidden="true"><use href="assets/img/client-logos.svg#modelarna"></use></svg></div>
-          <div class="client-mark" role="img" aria-label="Armstrong, The name for Quality"><svg class="client-logo" viewBox="0 0 200 80" aria-hidden="true"><use href="assets/img/client-logos.svg#armstrong"></use></svg></div>
-          <div class="client-mark" role="img" aria-label="Sahana"><svg class="client-logo" viewBox="0 0 200 80" aria-hidden="true"><use href="assets/img/client-logos.svg#sahana"></use></svg></div>
-          <div class="client-mark" role="img" aria-label="Trendy Fits"><svg class="client-logo" viewBox="0 0 200 80" aria-hidden="true"><use href="assets/img/client-logos.svg#trendyfits"></use></svg></div>
-          <div class="client-mark" role="img" aria-label="Mehala, Committed to Customer Delight"><svg class="client-logo" viewBox="0 0 200 80" aria-hidden="true"><use href="assets/img/client-logos.svg#mehala"></use></svg></div>
+  <section id="contact" class="contact-section reveal" data-nav-target="contact">
+    <video class="section-video" autoplay muted loop playsinline aria-hidden="true"
+      poster="assets/img/factory-aerial.jpg">
+      <source src="assets/video/factory-loop.mp4" type="video/mp4">
+    </video>
+    <div class="section-video-overlay"></div>
+    <div class="hero-watermark-mask" aria-hidden="true"></div>
+    <div class="wrap section-content contact-grid">
+      <div>
+        <p class="kicker">Let's talk</p>
+        <h2 style="font-size:clamp(1.6rem,2.6vw,2.2rem);margin:0 0 14px;">Want a clearer view of your factory?</h2>
+        <p class="contact-lead">Tell us how your lines work today. We will show you where Track Tech can remove the
+          manual follow-up and make the next step easier.</p>
+        <div class="hero-ctas" style="margin-top:26px;">
+          <a class="btn-primary contact-action-primary" href="mailto:sales@tracktechsolutions.com">Talk to sales</a>
+          <a class="btn-ghost contact-action-secondary" href="tel:+919650613666">Call +91 96506 13666</a>
         </div>
       </div>
+      <ul class="contact-list">
+        <li><b>Head office</b>364, 10/5 Silicon Town, Electronic City Phase 2, Bangalore 560100</li>
+        <li><b>Mail To</b><a href="mailto:Lebinesh@tracktechsolutions.com">Lebinesh@tracktechsolutions.com</a></li>
+        <li><b>Phone</b><a href="tel:+919650613666">+91 96506 13666</a> , <a href="tel:+919742060606">+91 97420
+            60606</a></li>
+        <li><b>LinkedIn</b><a href="https://www.linkedin.com/company/track-tech-solution/" target="_blank"
+            rel="noopener">linkedin.com/company/track-tech-solution</a></li>
+      </ul>
     </div>
-    <div class="client-metrics" aria-label="Track Tech company facts">
-      <div class="client-metric"><strong>2</strong><span>Countries</span></div>
-      <div class="client-metric"><strong>74+</strong><span>Factories</span></div>
-      <div class="client-metric"><strong>36</strong><span>Professionals</span></div>
-      <div class="client-metric"><strong>100%</strong><span>Customer focused</span></div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact" class="contact-section reveal" data-nav-target="contact">
-  <video class="section-video" autoplay muted loop playsinline aria-hidden="true">
-    <source src="assets/video/factory-loop.mp4" type="video/mp4">
-  </video>
-  <div class="section-video-overlay"></div>
-  <div class="wrap section-content contact-grid">
-    <div>
-      <p class="kicker">Let's talk</p>
-      <h2 style="font-size:clamp(1.6rem,2.6vw,2.2rem);margin:0 0 14px;">Want a clearer view of your factory?</h2>
-      <p class="contact-lead">Tell us how your lines work today. We will show you where Track Tech can remove the manual follow-up and make the next step easier.</p>
-      <div class="hero-ctas" style="margin-top:26px;">
-        <a class="btn-primary contact-action-primary" href="mailto:sales@tracktechsolutions.com">Talk to sales</a>
-        <a class="btn-ghost contact-action-secondary" href="tel:+919650613666">Call +91 96506 13666</a>
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <a class="brand-lockup" href="#about" aria-label="Track Tech Solution home" style="margin-bottom:14px;">
+            <img class="brand-mark" src="assets/img/track-tech-logo.png" alt="Track Tech Solution Logo">
+            <span class="wordmark">Track<span>Tech</span> Solution</span>
+          </a>
+          <p style="max-width:36ch;">Practical software for the people who plan, make, check and ship garments every
+            day.</p>
+        </div>
+        <div>
+          <h4>Products</h4>
+          <ul>
+            <li><a href="#product-experience" data-product-choice="trakwel">TrakWel</a></li>
+            <li><a href="#product-experience" data-product-choice="fabric-inventory">Fabric Inventory Management</a>
+            </li>
+            <li><a href="#product-experience" data-product-choice="cutting-digitalization">Cutting Room
+                Digitalization</a></li>
+            <li><a href="#product-experience" data-product-choice="tracking">Production Tracking</a></li>
+            <li><a href="#product-experience" data-product-choice="quality">Quality Control</a></li>
+            <li><a href="#product-experience" data-product-choice="planwel">PlanWel</a></li>
+            <li><a href="#product-experience" data-product-choice="mtrak">mTrak</a></li>
+            <li><a href="#product-experience" data-product-choice="sewiot">SewIoT</a></li>
+            <li><a href="#product-experience" data-product-choice="laundry">Laundry Management</a></li>
+            <li><a href="#product-experience" data-product-choice="jig">Jig Management</a></li>
+            <li><a href="#product-experience" data-product-choice="shrinkage">Shrinkage Testing App</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#clients">Key clients</a></li>
+            <li><a href="#contact">Contact us</a></li>
+            <li><a href="mailto:Lebinesh@tracktechsolutions.com">Lebinesh@tracktechsolutions.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 Track Tech Solution. All rights reserved.</span>
+        <span>Made in India</span>
       </div>
     </div>
-    <ul class="contact-list">
-      <li><b>Head office</b>364, 10/5 Silicon Town, Electronic City Phase 2, Bangalore 560100</li>
-      <li><b>Sales</b><a href="mailto:sales@tracktechsolutions.com">sales@tracktechsolutions.com</a></li>
-      <li><b>Phone</b><a href="tel:+919650613666">+91 96506 13666</a> · <a href="tel:+919742060606">+91 97420 60606</a></li>
-      <li><b>LinkedIn</b><a href="https://www.linkedin.com/company/track-tech-solution/" target="_blank" rel="noopener">linkedin.com/company/track-tech-solution</a></li>
-    </ul>
-  </div>
-</section>
+  </footer>
 
-<footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <div class="wordmark" style="margin-bottom:12px;">Track<span>Tech</span> Solution</div>
-        <p style="max-width:36ch;">Practical software for the people who plan, make, check and ship garments every day.</p>
-      </div>
-      <div>
-        <h4>Products</h4>
-        <ul>
-          <li><a href="#product-experience" data-product-choice="trakwel">TrakWel</a></li>
-          <li><a href="#product-experience" data-product-choice="fabric-inventory">Fabric Inventory Management</a></li>
-          <li><a href="#product-experience" data-product-choice="cutting-digitalization">Cutting Room Digitalization</a></li>
-          <li><a href="#product-experience" data-product-choice="tracking">Production Tracking</a></li>
-          <li><a href="#product-experience" data-product-choice="quality">Quality Control</a></li>
-          <li><a href="#product-experience" data-product-choice="planwel">PlanWel</a></li>
-          <li><a href="#product-experience" data-product-choice="mtrak">mTrak</a></li>
-          <li><a href="#product-experience" data-product-choice="sewiot">SewIoT</a></li>
-          <li><a href="#product-experience" data-product-choice="laundry">Laundry Management</a></li>
-          <li><a href="#product-experience" data-product-choice="jig">Jig Management</a></li>
-          <li><a href="#product-experience" data-product-choice="shrinkage">Shrinkage Testing App</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <ul>
-          <li><a href="#clients">Key clients</a></li>
-          <li><a href="#contact">Contact us</a></li>
-          <li><a href="mailto:sales@tracktechsolutions.com">sales@tracktechsolutions.com</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <span>© 2026 Track Tech Solution. All rights reserved.</span>
-      <span>Made in India</span>
-    </div>
-  </div>
-</footer>
+  <a class="whatsapp-float"
+    href="https://wa.me/919650613666?text=Hello%20Track%20Tech%20Solution%2C%20I%27d%20like%20to%20know%20more%20about%20your%20solutions."
+    target="_blank" rel="noopener" aria-label="Chat with Track Tech Solution on WhatsApp">
+    <svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M20 4.1A9.9 9.9 0 0 0 12.9 2C7.4 1.5 2.5 5.5 2 11a9.9 9.9 0 0 0 1.4 5.9L2 22l5.2-1.4A10 10 0 1 0 20 4.1Z" />
+      <path
+        d="M8.2 7.5c.2-.4.5-.4.8-.4h.6c.2 0 .4.1.5.4l.8 1.8c.1.2.1.4-.1.6l-.6.7c.7 1.3 1.7 2.3 3 3l.7-.6c.2-.2.4-.2.6-.1l1.8.8c.3.1.4.3.4.5v.6c0 .3 0 .6-.4.8-.4.2-1.1.4-1.7.3-1.5-.2-3.1-1-4.5-2.4-1.4-1.4-2.2-3-2.4-4.5-.1-.6.1-1.3.3-1.7Z" />
+    </svg>
+  </a>
 
-<a class="whatsapp-float" href="https://wa.me/919650613666?text=Hello%20Track%20Tech%20Solution%2C%20I%27d%20like%20to%20know%20more%20about%20your%20solutions." target="_blank" rel="noopener" aria-label="Chat with Track Tech Solution on WhatsApp">
-  <svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M20 4.1A9.9 9.9 0 0 0 12.9 2C7.4 1.5 2.5 5.5 2 11a9.9 9.9 0 0 0 1.4 5.9L2 22l5.2-1.4A10 10 0 1 0 20 4.1Z"/>
-    <path d="M8.2 7.5c.2-.4.5-.4.8-.4h.6c.2 0 .4.1.5.4l.8 1.8c.1.2.1.4-.1.6l-.6.7c.7 1.3 1.7 2.3 3 3l.7-.6c.2-.2.4-.2.6-.1l1.8.8c.3.1.4.3.4.5v.6c0 .3 0 .6-.4.8-.4.2-1.1.4-1.7.3-1.5-.2-3.1-1-4.5-2.4-1.4-1.4-2.2-3-2.4-4.5-.1-.6.1-1.3.3-1.7Z"/>
-  </svg>
-</a>
-
-<script src="js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>

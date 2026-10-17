@@ -38,10 +38,11 @@ section{margin-bottom:20px;}
 
 /* NAV */
 nav{position:sticky; top:0; z-index:50; background:rgba(10,30,43,0.82); backdrop-filter:blur(8px);}
-.nav-inner{max-width:1160px;margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;}
-.brand-lockup{display:flex;flex:0 0 auto;align-items:center;gap:10px;text-decoration:none;}
-.brand-mark{display:block;width:52px;height:52px;flex:0 0 auto;padding:4px;object-fit:contain;background:#FFFFFF;border:1px solid rgba(255,255,255,0.7);border-radius:50%;box-shadow:0 2px 10px rgba(0,0,0,0.2);}
-.wordmark{color:var(--white);font-size:1.15rem;font-weight:700;letter-spacing:0;}
+.nav-inner{max-width:1160px;margin:0 auto;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;}
+.brand-lockup{display:flex;flex:0 0 auto;align-items:center;gap:12px;text-decoration:none;}
+.brand-mark{display:block;width:64px;height:64px;flex:0 0 auto;padding:2px;object-fit:contain;background:#FFFFFF;border:2px solid rgba(20,120,102,0.22);border-radius:50%;box-shadow:0 3px 14px rgba(0,0,0,0.14);transition:transform .2s ease;}
+.brand-lockup:hover .brand-mark{transform:scale(1.06);}
+.wordmark{color:var(--white);font-size:1.24rem;font-weight:700;letter-spacing:0;}
 .wordmark span{color:var(--cyan);}
 .nav-links{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0;}
 .nav-links a{color:#C9D8DE;font-size:0.92rem;text-decoration:none;}
@@ -92,7 +93,7 @@ nav .nav-products .products-menu .is-selected{box-shadow:inset 4px 0 #146477;fon
   .product-menu-parent{padding:10px 14px;}
   .nav-toggle{display:block;}
 }
-@media(max-width:480px){.brand-lockup{gap:7px;}.brand-mark{width:42px;height:42px;}.wordmark{font-size:1.02rem;}}
+@media(max-width:480px){.brand-lockup{gap:9px;}.brand-mark{width:52px;height:52px;}.wordmark{font-size:1.08rem;}}
 
 /* HERO */
 .hero{
@@ -100,10 +101,10 @@ nav .nav-products .products-menu .is-selected{box-shadow:inset 4px 0 #146477;fon
   padding:120px 0 70px; min-height:640px; display:flex; align-items:center;
 }
 @media(max-width:600px){.hero{min-height:560px;padding:110px 0 60px;}}
-.hero-bg-video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;}
+.hero-bg-video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; transform:scale(1.15); transform-origin:20% 25%;}
 .hero-overlay{position:absolute; inset:0; z-index:1;
   background:linear-gradient(100deg, rgba(6,17,25,0.76) 0%, rgba(6,17,25,0.62) 32%, rgba(6,17,25,0.2) 60%, rgba(6,17,25,0.35) 100%);}
-.hero-watermark-mask{position:absolute;z-index:1;left:52%;top:53%;width:240px;height:190px;transform:translate(-50%,-50%);pointer-events:none;filter:blur(14px);background:radial-gradient(ellipse,rgba(6,17,25,0.94) 0%,rgba(6,17,25,0.7) 42%,rgba(6,17,25,0.2) 68%,transparent 82%);}
+.hero-watermark-mask{position:absolute;z-index:2;right:2%;bottom:3%;width:140px;height:120px;pointer-events:none;filter:blur(20px);background:rgba(232,239,238,0.95);border-radius:50%;}
 .hero-grid{position:relative; z-index:2; display:block; max-width:640px;}
 .eyebrow{color:var(--cyan);font-size:0.85rem;font-weight:600;margin:0 0 16px;}
 .hero h1{font-size:clamp(2.1rem,4.2vw,3.4rem);line-height:1.08;margin:0 0 22px;letter-spacing:0;}
@@ -171,16 +172,21 @@ nav .nav-products .products-menu .is-selected{box-shadow:inset 4px 0 #146477;fon
 .product-stages li strong{color:#E7F0F2;font-size:0.75rem;font-weight:600;}
 .product-cta{margin-top:auto;padding:11px 18px;font-size:0.88rem;}
 .product-visual{display:grid;grid-template-columns:1fr 1fr;min-height:390px;overflow:hidden;background:#102635;isolation:isolate;}
-.product-visual[data-product="fabric-inventory"],.product-visual[data-product="cutting-digitalization"],.product-visual[data-product="tracking"],.product-visual[data-product="quality"],.product-visual[data-product="laundry"],.product-visual[data-product="jig"],.product-visual[data-product="planwel"],.product-visual[data-product="mtrak"],.product-visual[data-product="shrinkage"]{grid-template-columns:1fr;background:transparent;}
-.product-visual[data-product="fabric-inventory"] .product-photo,.product-visual[data-product="cutting-digitalization"] .product-photo,.product-visual[data-product="tracking"] .product-photo,.product-visual[data-product="quality"] .product-photo,.product-visual[data-product="laundry"] .product-photo,.product-visual[data-product="jig"] .product-photo,.product-visual[data-product="planwel"] .product-photo,.product-visual[data-product="mtrak"] .product-photo,.product-visual[data-product="shrinkage"] .product-photo{min-height:390px;background:transparent;}
-.product-visual[data-product="fabric-inventory"] .product-animation-stage,.product-visual[data-product="cutting-digitalization"] .product-animation-stage,.product-visual[data-product="tracking"] .product-animation-stage,.product-visual[data-product="quality"] .product-animation-stage,.product-visual[data-product="laundry"] .product-animation-stage,.product-visual[data-product="jig"] .product-animation-stage,.product-visual[data-product="planwel"] .product-animation-stage,.product-visual[data-product="mtrak"] .product-animation-stage,.product-visual[data-product="shrinkage"] .product-animation-stage{display:none;}
+.product-visual[data-product="fabric-inventory"],.product-visual[data-product="cutting-digitalization"],.product-visual[data-product="tracking"],.product-visual[data-product="quality"],.product-visual[data-product="laundry"],.product-visual[data-product="jig"],.product-visual[data-product="planwel"],.product-visual[data-product="mtrak"],.product-visual[data-product="shrinkage"],.product-visual[data-product="sewiot"],.product-visual[data-product="sewlot"]{grid-template-columns:1fr;background:transparent;}
+.product-visual[data-product="fabric-inventory"] .product-photo,.product-visual[data-product="cutting-digitalization"] .product-photo,.product-visual[data-product="tracking"] .product-photo,.product-visual[data-product="quality"] .product-photo,.product-visual[data-product="laundry"] .product-photo,.product-visual[data-product="jig"] .product-photo,.product-visual[data-product="planwel"] .product-photo,.product-visual[data-product="mtrak"] .product-photo,.product-visual[data-product="shrinkage"] .product-photo,.product-visual[data-product="sewiot"] .product-photo,.product-visual[data-product="sewlot"] .product-photo{min-height:390px;background:transparent;}
+.product-visual[data-product="fabric-inventory"] .product-animation-stage,.product-visual[data-product="cutting-digitalization"] .product-animation-stage,.product-visual[data-product="tracking"] .product-animation-stage,.product-visual[data-product="quality"] .product-animation-stage,.product-visual[data-product="laundry"] .product-animation-stage,.product-visual[data-product="jig"] .product-animation-stage,.product-visual[data-product="planwel"] .product-animation-stage,.product-visual[data-product="mtrak"] .product-animation-stage,.product-visual[data-product="shrinkage"] .product-animation-stage,.product-visual[data-product="sewiot"] .product-animation-stage,.product-visual[data-product="sewlot"] .product-animation-stage{display:none;}
 .product-photo{position:relative;min-width:0;min-height:390px;overflow:hidden;background:#DCE7E8;}
 .product-photo>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:product-image-in .7s ease both;}
-.product-visual[data-product="tracking"] .product-photo>img,.product-visual[data-product="quality"] .product-photo>img,.product-visual[data-product="laundry"] .product-photo>img,.product-visual[data-product="planwel"] .product-photo>img,.product-visual[data-product="mtrak"] .product-photo>img{object-fit:cover;object-position:center top;}
-.product-visual[data-product="jig"] .product-photo>img,.product-visual[data-product="shrinkage"] .product-photo>img{object-fit:contain;object-position:right center;}
+.product-visual[data-product="tracking"] .product-photo>img,.product-visual[data-product="quality"] .product-photo>img,.product-visual[data-product="laundry"] .product-photo>img,.product-visual[data-product="planwel"] .product-photo>img,.product-visual[data-product="mtrak"] .product-photo>img,.product-visual[data-product="sewiot"] .product-photo>img,.product-visual[data-product="sewlot"] .product-photo>img{object-fit:cover;object-position:center top;}
+.product-visual[data-product="jig"] .product-photo>img,.product-visual[data-product="shrinkage"] .product-photo>img{object-fit:contain;object-position:center center;}
+@media(min-width:721px){
+  .product-detail[data-product="jig"],.product-detail[data-product="shrinkage"],.product-detail:has(.product-visual[data-product="jig"]),.product-detail:has(.product-visual[data-product="shrinkage"]){grid-template-columns:minmax(0,1.35fr) minmax(300px,390px);}
+  .product-detail[data-product="jig"] .product-copy,.product-detail[data-product="shrinkage"] .product-copy{width:100%;max-width:100%;}
+  .product-detail[data-product="jig"] .product-description,.product-detail[data-product="shrinkage"] .product-description{width:100%;max-width:100%;}
+}
 .product-animation-stage{position:relative;min-width:0;min-height:390px;overflow:hidden;background:radial-gradient(ellipse at 50% 28%,rgba(47,232,200,0.13),transparent 48%),linear-gradient(145deg,#183B4C,#0A1E2B);}
 .visual-widget{position:absolute;inset:0;z-index:2;display:none;}
-.product-visual[data-product="quality"] .visual-widget--quality,.product-visual[data-product="tracking"] .visual-widget--tracking,.product-visual[data-product="maintenance"] .visual-widget--maintenance,.product-visual[data-product="fabric"] .visual-widget--fabric,.product-visual[data-product="planning"] .visual-widget--planning,.product-visual[data-product="warehouse"] .visual-widget--warehouse,.product-visual[data-product="trakwel"] .visual-widget--trakwel,.product-visual[data-product="sewlot"] .visual-widget--sewlot{display:block;}
+.product-visual[data-product="quality"] .visual-widget--quality,.product-visual[data-product="tracking"] .visual-widget--tracking,.product-visual[data-product="maintenance"] .visual-widget--maintenance,.product-visual[data-product="fabric"] .visual-widget--fabric,.product-visual[data-product="planning"] .visual-widget--planning,.product-visual[data-product="warehouse"] .visual-widget--warehouse,.product-visual[data-product="trakwel"] .visual-widget--trakwel{display:block;}
 .quality-frame{position:absolute;top:19%;left:16%;width:68%;height:47%;border:1px solid rgba(126,255,226,0.75);box-shadow:0 0 0 999px rgba(8,35,38,0.08);}
 .quality-frame i{position:absolute;width:14px;height:14px;border-color:#78F2D5;border-style:solid;}
 .quality-frame i:nth-child(1){top:-2px;left:-2px;border-width:2px 0 0 2px;}
@@ -293,7 +299,7 @@ nav .nav-products .products-menu .is-selected{box-shadow:inset 4px 0 #146477;fon
 
 /* CONTACT */
 .contact-section{position:relative;overflow:hidden;color:var(--white);background:var(--navy);}
-.section-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+.section-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;transform:scale(1.15);transform-origin:20% 25%;}
 .section-video-overlay{position:absolute;inset:0;background:linear-gradient(100deg,rgba(6,17,25,0.54),rgba(6,17,25,0.36));z-index:1;}
 .section-content{position:relative;z-index:2;}
 .contact-section h2{color:var(--white);}
@@ -344,7 +350,7 @@ nav{background:rgba(244,247,246,0.78);border-bottom:1px solid rgba(16,34,44,0.1)
 .nav-links a:hover{color:var(--ink);}
 .nav-toggle{color:var(--ink);}
 .hero-overlay{background:linear-gradient(100deg,rgba(6,17,25,0.42) 0%,rgba(6,17,25,0.24) 42%,rgba(6,17,25,0.08) 72%,rgba(6,17,25,0.18) 100%);}
-.hero-watermark-mask{background:radial-gradient(ellipse,rgba(6,17,25,0.82) 0%,rgba(6,17,25,0.52) 42%,rgba(6,17,25,0.12) 68%,transparent 82%);}
+.hero-watermark-mask{background:rgba(244,247,246,0.85);backdrop-filter:blur(16px);border-radius:50%;}
 .products-section,.contact-section{color:var(--ink);}
 .section-video-overlay{background:rgba(244,247,246,0.46);}
 .products-section .section-head h2,.contact-section h2{color:var(--ink);}
@@ -371,7 +377,6 @@ nav{background:rgba(244,247,246,0.94);border-bottom-color:rgba(16,34,44,0.12);}
 @media(max-width:800px){.nav-links{background:rgba(244,247,246,0.98);}.nav-links li{border-color:#DCE5E3;}}
 .hero,.products-section,.company-section,.leadership-section,.clients-section,.contact-section{color:var(--ink);}
 .hero-overlay{background:linear-gradient(100deg,rgba(232,239,238,0.72) 0%,rgba(232,239,238,0.64) 44%,rgba(232,239,238,0.52) 100%);}
-.hero-watermark-mask{display:none;}
 .section-video-overlay{background:rgba(232,239,238,0.64);}
 .hero h1,.products-section .section-head h2,.clients-section .section-head h2,.leadership-section .section-head h2,.contact-section h2{color:var(--ink);}
 .hero p,.products-section .section-head p,.clients-section .section-head p,.leadership-section .section-head p,.contact-section p{color:var(--ink-soft);}
