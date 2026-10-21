@@ -153,7 +153,8 @@ const productImage = document.getElementById('productImage');
 const productVisual = document.getElementById('productVisual');
 
 const selectProduct = (productId) => {
-  const product = products[productId];
+  const key = productId?.toLowerCase();
+  const product = products[key];
   if (!product || !productDetail) return;
 
   productKicker.textContent = `PRODUCT ${product.number} / ${product.name.toUpperCase()}`;
@@ -187,15 +188,22 @@ const selectProduct = (productId) => {
 };
 
 productChoices.forEach(choice => {
-  choice.addEventListener('click', () => {
-    selectProduct(choice.dataset.productChoice);
-    setActiveNavSection('products');
+  choice.addEventListener('click', (event) => {
     if (choice.tagName === 'A') {
+      event.preventDefault();
       navProducts?.classList.remove('is-open');
       productsToggle?.setAttribute('aria-expanded', 'false');
+      navLinks?.classList.remove('open');
+      choice.blur();
+      try {
+        history.replaceState(null, '', '#product-experience');
+      } catch (_) {}
     } else {
-      productDetail?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      choice.blur();
     }
+    selectProduct(choice.dataset.productChoice);
+    setActiveNavSection('products');
+    productDetail?.scrollIntoView({ behavior: 'smooth', block: 'center' });
   });
 });
 
