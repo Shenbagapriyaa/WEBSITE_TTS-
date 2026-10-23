@@ -8,7 +8,9 @@
   <meta name="description"
     content="Track materials, orders, production and quality in one clear view, from the first roll of fabric to the final shipment.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet">
   <link rel="icon" type="image/png" href="assets/img/track-tech-logo.png">
   <link rel="stylesheet" href="css/styles.css">
@@ -16,7 +18,8 @@
 
 <body>
 
-  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
 
   <nav id="siteNav">
     <div class="nav-inner">
@@ -50,9 +53,11 @@
                 <a href="#product-experience" role="menuitem" data-product-choice="fabric-inventory">Fabric Inventory
                   Management</a>
                 <a href="#product-experience" role="menuitem" data-product-choice="cutting-digitalization">Cutting Room
-                  Digitalization</a>
-                <a href="#product-experience" role="menuitem" data-product-choice="tracking">Production Tracking</a>
-                <a href="#product-experience" role="menuitem" data-product-choice="quality">Quality Control</a>
+                  Digitization</a>
+                <a href="#product-experience" role="menuitem" data-product-choice="tracking">Real-Time Production
+                  Tracking</a>
+                <a href="#product-experience" role="menuitem" data-product-choice="quality">Quality Management
+                  System</a>
               </div>
             </div>
             <a href="#product-experience" role="menuitem" data-product-choice="planwel">PlanWel</a>
@@ -87,18 +92,18 @@
     </video>
     <div class="hero-overlay"></div>
     <div class="wrap hero-grid">
-      <div>
-        <p class="eyebrow">Built for the way garment factories work</p>
-        <h1>A clearer way to run your factory</h1>
-        <p>From the first roll of fabric to the final shipment, Track Tech helps your team see what is happening, fix
-          issues sooner and keep every order moving.</p>
-        <div class="hero-ctas">
-          <a class="btn-primary" href="#contact">Experience It Live</a>
-          <a class="btn-ghost" href="#products">Explore products</a>
-        </div>
+      <p class="eyebrow">Built for the way garment factories work</p>
+      <h1 class="hero-title">
+        <span class="hero-title-top">A Clearer Way To</span>
+        <span class="hero-title-bottom">Run Your Garment Factory</span>
+      </h1>
+      <p class="hero-lead">From the first roll of fabric to the final shipment, Track Tech helps your team see what is
+        happening, fix
+        issues sooner and keep every order moving.</p>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="#contact">Experience It Live</a>
+        <a class="btn-ghost" href="#products">Explore products</a>
       </div>
-
-
     </div>
 
   </header>
@@ -123,7 +128,7 @@
       </div>
       <div class="company-facts" aria-label="Track Tech Solutions at a glance">
         <div><strong>2019</strong><span>Established</span></div>
-        <div><strong>74+</strong><span>Factories supported</span></div>
+        <div><strong>74+</strong><span>Factories</span></div>
         <div><strong>02</strong><span>Countries</span></div>
         <div><strong>36</strong><span>Professionals</span></div>
       </div>
@@ -138,44 +143,57 @@
     <div class="hero-overlay"></div>
     <div class="wrap section-content">
       <div class="section-head leadership-intro">
-        <p class="kicker">Our leadership team</p>
+        <!-- <p class="kicker">Our leadership team</p> -->
         <h2>Built around manufacturing, operations and technology</h2>
         <p>Three perspectives working together to make factory software practical, dependable and useful on the floor.
         </p>
       </div>
       <div class="leadership-grid">
         <article class="leader-profile">
-          <div class="leader-mark" aria-hidden="true">GM</div>
-          <p class="leader-role">CHIEF EXECUTIVE OFFICER</p>
-          <h3>Gopinath M. (Muniraj)</h3>
-          <p class="leader-bio">Gopinath's career spans apparel manufacturing and digital solutions, including regional
-            sales leadership at Coats Digital and roles associated with Arvind Limited and K Mohan Exports. At Track
-            Tech, he leads the company's direction and its focus on bringing technology into everyday factory
-            operations.</p>
+          <img src="assets/img/gopinath-muniraj.jpg" alt="Gopinath Muniraj - Founder & CEO" class="leader-avatar">
+          <p class="leader-role">Founder & Chief Executive Officer (CEO)</p>
+          <h3>Gopinath Muniraj</h3>
+          <p class="leader-bio">Gopinath Muniraj is a technology entrepreneur and innovator with over two decades of
+            experience addressing challenges in apparel manufacturing. Having worked closely with factories across South
+            India, he brings deep industry understanding and a vision for technology-driven transformation.</p><br>
+
+          <p class="leader-bio">As Founder and CEO of Track Tech Solution, he leads the development of intelligent
+            digital solutions that
+            help apparel manufacturers streamline operations, leverage data and improve productivity through automation,
+            AI and Industrial IoT. His vision is to empower factory teams, enable data-driven decisions and build
+            smarter, more efficient and connected manufacturing environments.</p>
           <a href="https://rocketreach.co/gopinath-muniraj-email_598095225" target="_blank" rel="noopener">Professional
             profile <span aria-hidden="true">↗</span></a>
         </article>
         <article class="leader-profile">
-          <div class="leader-mark" aria-hidden="true">LB</div>
-          <p class="leader-role">CHIEF OPERATING OFFICER</p>
+          <img src="assets/img/lebinesh-balan.jpg" alt="Lebinesh Balan - Co-Founder & COO" class="leader-avatar">
+          <p class="leader-role">Co-Founder & Chief Operating Officer (COO)</p>
           <h3>Lebinesh Balan</h3>
           <p class="leader-bio">With close to two decades of experience in digital transformation, particularly in
             apparel manufacturing, Lebinesh Balan , leads business strategy, sales, operations, and commercial growth.
             He helps apparel manufacturers embrace digital technologies to digitise shop-floor operations, optimise
-            production planning, and enhance productivity and operational visibility.
-            Combining deep industry understanding with strategic leadership, he bridges the gap between manufacturing
+            production planning, and enhance productivity and operational visibility.</p><br>
+
+          <p class="leader-bio"> Combining deep industry understanding with strategic leadership, he bridges the gap
+            between manufacturing
             challenges and technology innovation to deliver measurable business outcomes, build lasting customer
             partnerships, and drive sustainable growth.</p>
           <a href="https://in.linkedin.com/in/lebinesh-balan-a2521637" target="_blank" rel="noopener">LinkedIn profile
             <span aria-hidden="true">↗</span></a>
         </article>
         <article class="leader-profile">
-          <div class="leader-mark" aria-hidden="true">DR</div>
-          <p class="leader-role">CHIEF TECHNOLOGY OFFICER</p>
+          <img src="assets/img/deepak-rajkumar.jpg" alt="Deepak Rajkumar - Co-Founder & CTO" class="leader-avatar">
+          <p class="leader-role">Co-Founder & Chief Technology Officer (CTO)</p>
           <h3>Deepak Rajkumar</h3>
-          <p class="leader-bio">Deepak guides the technology behind the platform, with a focus on reliable product
-            engineering, useful integrations and clear information for factory teams. As CTO, he helps turn complex
-            manufacturing workflows into software people can use with confidence.</p>
+          <p class="leader-bio">Deepak is a technology leader with extensive experience in apparel manufacturing and
+            software development. At Track Tech Solution, he leads technology strategy, product engineering and digital
+            transformation, building scalable solutions that address complex manufacturing challenges.</p><br>
+
+          <p class="leader-bio">His expertise spans software architecture, production tracking, fabric inventory
+            management, cutting-room
+            digitisation, AI and Industrial IoT. Passionate about innovation, he focuses on connecting traditional
+            manufacturing processes with intelligent, data-driven factory ecosystems to improve operational efficiency,
+            visibility and business performance.</p>
         </article>
       </div>
     </div>
@@ -188,23 +206,16 @@
     <div class="hero-overlay"></div>
     <div class="wrap section-content">
       <div class="section-head">
-        <p class="kicker">What we help with</p>
-        <h2>The tools your factory team needs, in one place</h2>
-        <p>Use the modules you need today, then connect the rest as your operation grows. Together, they give your team
-          a clear view from fabric receiving to finished goods.</p>
+
       </div>
       <div class="product-experience" id="product-experience">
         <article class="product-detail" id="product-detail" data-product="trakwel" role="tabpanel" aria-live="polite">
           <div class="product-copy">
-            <p class="product-kicker" id="productKicker">PRODUCT 01 <span>/</span> TRAKWEL</p>
+
             <h3 id="productTitle">TrakWel</h3>
             <p class="product-description" id="productDescription">Manufacturing Execution System (MES) for real-time
               visibility and control across the shop floor, improving efficiency, quality and performance.</p>
-            <ol class="product-stages" aria-label="Product workflow">
-              <li><span>01</span><strong id="productStageOne">Track</strong></li>
-              <li><span>02</span><strong id="productStageTwo">Monitor</strong></li>
-              <li><span>03</span><strong id="productStageThree">Improve</strong></li>
-            </ol>
+
             <a class="btn-primary product-cta" href="#contact">Talk to our team</a>
           </div>
           <div class="product-visual" id="productVisual" data-product="trakwel">
@@ -268,16 +279,15 @@
     <div class="hero-overlay"></div>
     <div class="wrap">
       <div class="section-head clients-intro">
-        <p class="kicker">Key customers</p>
-        <h2>Technology trusted by apparel makers</h2>
-        <p>From established manufacturing groups to specialist apparel exporters, Track Tech brings production, quality
-          and order visibility together for teams on the factory floor.</p>
+
+        <h2>Technology trusted by apparel manufacturers</h2>
+        <!-- <p>From established manufacturing groups to specialist apparel exporters, Track Tech brings production, quality
+          and order visibility together for teams on the factory floor.</p> -->
       </div>
       <div class="client-showcase">
         <div class="client-roster">
           <div class="client-roster-head">
-            <span>Customer directory</span>
-            <strong>Key customers</strong>
+            <strong>Key Customers</strong>
           </div>
           <svg xmlns="http://www.w3.org/2000/svg" style="display:none;" aria-hidden="true">
             <symbol id="shahi" viewBox="0 0 200 80">
@@ -363,8 +373,8 @@
             <div class="client-mark" role="img" aria-label="PDS">
               <img class="client-logo-img" src="assets/img/clients/pds.png" alt="PDS" loading="lazy">
             </div>
-            <div class="client-mark" role="img" aria-label="Texport">
-              <img class="client-logo-img" src="assets/img/clients/texport.png" alt="Texport" loading="lazy">
+            <div class="client-mark" role="img" aria-label="Texport Overseas">
+              <img class="client-logo-img" src="assets/img/clients/texport.png" alt="Texport Overseas" loading="lazy">
             </div>
             <div class="client-mark" role="img" aria-label="Penguin Apparels (P) Ltd">
               <img class="client-logo-img" src="assets/img/clients/penguin.png" alt="Penguin Apparels" loading="lazy">
@@ -372,8 +382,8 @@
             <div class="client-mark" role="img" aria-label="Modelama Exports">
               <img class="client-logo-img" src="assets/img/clients/modelama.png" alt="Modelama Exports" loading="lazy">
             </div>
-            <div class="client-mark" role="img" aria-label="Armstrong">
-              <img class="client-logo-img" src="assets/img/clients/armstrong.png" alt="Armstrong" loading="lazy">
+            <div class="client-mark" role="img" aria-label="Armstrong, The name for Quality">
+              <img class="client-logo-img" src="assets/img/clients/armstrong.png" alt="Armstrong, The name for Quality" loading="lazy">
             </div>
             <div class="client-mark" role="img" aria-label="Sahana">
               <img class="client-logo-img" src="assets/img/clients/sahana.png" alt="Sahana" loading="lazy">
@@ -419,7 +429,7 @@
         </div>
       </div>
       <ul class="contact-list">
-        <li><b>Head office</b>364, 10/5 Silicon Town, Electronic City Phase 2, Bangalore 560100</li>
+        <li><b>Head office</b><a href="https://www.google.com/maps/search/?api=1&query=364%2C+10%2F5+Silicon+Town%2C+Electronic+City+Phase+2%2C+Bangalore+560100" target="_blank" rel="noopener">364, 10/5 Silicon Town, Electronic City Phase 2, Bangalore 560100</a></li>
         <li><b>Mail To</b><a href="mailto:Lebinesh@tracktechsolutions.com">Lebinesh@tracktechsolutions.com</a></li>
         <li><b>Phone</b><a href="tel:+919650613666">+91 96506 13666</a> , <a href="tel:+919742060606">+91 97420
             60606</a></li>

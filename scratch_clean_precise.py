@@ -1,4 +1,5 @@
 import os
+# pyrefly: ignore[missing-import]
 from PIL import Image
 
 brain_dir = r"C:\Users\madhu\.gemini\antigravity-ide\brain\829c389f-eb5b-4fdc-9b70-490c729cdbc8"
