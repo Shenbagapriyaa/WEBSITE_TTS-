@@ -79,8 +79,8 @@ const products = {
   trakwel: {
     number: '01', name: 'TrakWel',
     description: 'Manufacturing Execution System (MES) for real-time visibility and control across the shop floor, improving efficiency, quality and performance.',
-    stages: ['Track', 'Monitor', 'Improve'], image: 'assets/img/production-tracking.jpg',
-    alt: 'Live production tracking across garment factory lines', label: '', value: '', visual: 'trakwel'
+    stages: ['Track', 'Monitor', 'Improve'], image: 'assets/img/trakwel.png',
+    alt: 'TrakWel smarter manufacturing execution system illustration', label: '', value: '', visual: 'trakwel', imageOnly: true
   },
   'fabric-inventory': {
     number: '02', name: 'Fabric Inventory Management',
@@ -247,7 +247,7 @@ document.querySelectorAll('.product-menu-parent, .product-menu-disclosure').forE
   control.addEventListener('click', () => toggleProductGroup(control));
 });
 
-// Dual-layer custom cursor: Outer blue ring + inner green dot
+// Dual-layer custom cursor: Outer blue ring + inner blue dot
 const cursorRing = document.getElementById('cursorRing');
 const cursorDot = document.getElementById('cursorDot');
 

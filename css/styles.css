@@ -55,16 +55,16 @@ section{padding:88px 0; margin-bottom:0;}
   width:36px;
   height:36px;
   border:2px solid #087E8B;
-  background:rgba(47,232,200,0.06);
+  background:rgba(8,126,139,0.08);
   box-shadow:0 0 12px rgba(8,126,139,0.3);
   transition:opacity .2s ease;
 }
 .cursor-dot{
   width:9px;
   height:9px;
-  background:#2FE8C8;
+  background:#087E8B;
   border:1.5px solid #087E8B;
-  box-shadow:0 0 8px rgba(47,232,200,0.85);
+  box-shadow:0 0 8px rgba(8,126,139,0.85);
   transition:opacity .2s ease;
 }
 @media(min-width:901px) and (hover:hover) and (pointer:fine){
@@ -236,18 +236,12 @@ nav .nav-products .products-menu .is-selected{box-shadow:inset 4px 0 #146477;fon
 .product-stages li strong{color:#E7F0F2;font-size:0.75rem;font-weight:600;}
 .product-cta{margin-top:auto;padding:11px 18px;font-size:0.88rem;}
 .product-visual{display:grid;grid-template-columns:1fr 1fr;min-height:390px;overflow:hidden;background:#102635;isolation:isolate;}
-.product-visual[data-product="fabric-inventory"],.product-visual[data-product="cutting-digitalization"],.product-visual[data-product="tracking"],.product-visual[data-product="quality"],.product-visual[data-product="laundry"],.product-visual[data-product="jig"],.product-visual[data-product="planwel"],.product-visual[data-product="mtrak"],.product-visual[data-product="shrinkage"],.product-visual[data-product="sewiot"],.product-visual[data-product="sewlot"]{grid-template-columns:1fr;background:transparent;}
-.product-visual[data-product="fabric-inventory"] .product-photo,.product-visual[data-product="cutting-digitalization"] .product-photo,.product-visual[data-product="tracking"] .product-photo,.product-visual[data-product="quality"] .product-photo,.product-visual[data-product="laundry"] .product-photo,.product-visual[data-product="jig"] .product-photo,.product-visual[data-product="planwel"] .product-photo,.product-visual[data-product="mtrak"] .product-photo,.product-visual[data-product="shrinkage"] .product-photo,.product-visual[data-product="sewiot"] .product-photo,.product-visual[data-product="sewlot"] .product-photo{min-height:390px;background:transparent;}
-.product-visual[data-product="fabric-inventory"] .product-animation-stage,.product-visual[data-product="cutting-digitalization"] .product-animation-stage,.product-visual[data-product="tracking"] .product-animation-stage,.product-visual[data-product="quality"] .product-animation-stage,.product-visual[data-product="laundry"] .product-animation-stage,.product-visual[data-product="jig"] .product-animation-stage,.product-visual[data-product="planwel"] .product-animation-stage,.product-visual[data-product="mtrak"] .product-animation-stage,.product-visual[data-product="shrinkage"] .product-animation-stage,.product-visual[data-product="sewiot"] .product-animation-stage,.product-visual[data-product="sewlot"] .product-animation-stage{display:none;}
+.product-visual[data-product="trakwel"],.product-visual[data-product="fabric-inventory"],.product-visual[data-product="cutting-digitalization"],.product-visual[data-product="tracking"],.product-visual[data-product="quality"],.product-visual[data-product="laundry"],.product-visual[data-product="jig"],.product-visual[data-product="planwel"],.product-visual[data-product="mtrak"],.product-visual[data-product="shrinkage"],.product-visual[data-product="sewiot"],.product-visual[data-product="sewlot"]{grid-template-columns:1fr;background:transparent;}
+.product-visual[data-product="trakwel"] .product-photo,.product-visual[data-product="fabric-inventory"] .product-photo,.product-visual[data-product="cutting-digitalization"] .product-photo,.product-visual[data-product="tracking"] .product-photo,.product-visual[data-product="quality"] .product-photo,.product-visual[data-product="laundry"] .product-photo,.product-visual[data-product="jig"] .product-photo,.product-visual[data-product="planwel"] .product-photo,.product-visual[data-product="mtrak"] .product-photo,.product-visual[data-product="shrinkage"] .product-photo,.product-visual[data-product="sewiot"] .product-photo,.product-visual[data-product="sewlot"] .product-photo{min-height:390px;background:transparent;}
+.product-visual[data-product="trakwel"] .product-animation-stage,.product-visual[data-product="fabric-inventory"] .product-animation-stage,.product-visual[data-product="cutting-digitalization"] .product-animation-stage,.product-visual[data-product="tracking"] .product-animation-stage,.product-visual[data-product="quality"] .product-animation-stage,.product-visual[data-product="laundry"] .product-animation-stage,.product-visual[data-product="jig"] .product-animation-stage,.product-visual[data-product="planwel"] .product-animation-stage,.product-visual[data-product="mtrak"] .product-animation-stage,.product-visual[data-product="shrinkage"] .product-animation-stage,.product-visual[data-product="sewiot"] .product-animation-stage,.product-visual[data-product="sewlot"] .product-animation-stage{display:none;}
 .product-photo{position:relative;min-width:0;min-height:390px;overflow:hidden;background:#DCE7E8;}
 .product-photo>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:product-image-in .7s ease both;}
-.product-visual[data-product="tracking"] .product-photo>img,.product-visual[data-product="quality"] .product-photo>img,.product-visual[data-product="laundry"] .product-photo>img,.product-visual[data-product="planwel"] .product-photo>img,.product-visual[data-product="mtrak"] .product-photo>img,.product-visual[data-product="sewiot"] .product-photo>img,.product-visual[data-product="sewlot"] .product-photo>img{object-fit:cover;object-position:center top;}
-.product-visual[data-product="jig"] .product-photo>img,.product-visual[data-product="shrinkage"] .product-photo>img{object-fit:contain;object-position:center center;}
-@media(min-width:721px){
-  .product-detail[data-product="jig"],.product-detail[data-product="shrinkage"],.product-detail:has(.product-visual[data-product="jig"]),.product-detail:has(.product-visual[data-product="shrinkage"]){grid-template-columns:minmax(0,1.35fr) minmax(300px,390px);}
-  .product-detail[data-product="jig"] .product-copy,.product-detail[data-product="shrinkage"] .product-copy{width:100%;max-width:100%;}
-  .product-detail[data-product="jig"] .product-description,.product-detail[data-product="shrinkage"] .product-description{width:100%;max-width:100%;}
-}
+.product-visual[data-product="trakwel"] .product-photo>img,.product-visual[data-product="fabric-inventory"] .product-photo>img,.product-visual[data-product="cutting-digitalization"] .product-photo>img,.product-visual[data-product="tracking"] .product-photo>img,.product-visual[data-product="quality"] .product-photo>img,.product-visual[data-product="laundry"] .product-photo>img,.product-visual[data-product="jig"] .product-photo>img,.product-visual[data-product="planwel"] .product-photo>img,.product-visual[data-product="mtrak"] .product-photo>img,.product-visual[data-product="shrinkage"] .product-photo>img,.product-visual[data-product="sewiot"] .product-photo>img,.product-visual[data-product="sewlot"] .product-photo>img{object-fit:cover;object-position:center top;}
 .product-animation-stage{position:relative;min-width:0;min-height:390px;overflow:hidden;background:radial-gradient(ellipse at 50% 28%,rgba(47,232,200,0.13),transparent 48%),linear-gradient(145deg,#183B4C,#0A1E2B);}
 .visual-widget{position:absolute;inset:0;z-index:2;display:none;}
 .product-visual[data-product="quality"] .visual-widget--quality,.product-visual[data-product="tracking"] .visual-widget--tracking,.product-visual[data-product="maintenance"] .visual-widget--maintenance,.product-visual[data-product="fabric"] .visual-widget--fabric,.product-visual[data-product="planning"] .visual-widget--planning,.product-visual[data-product="warehouse"] .visual-widget--warehouse,.product-visual[data-product="trakwel"] .visual-widget--trakwel{display:block;}
