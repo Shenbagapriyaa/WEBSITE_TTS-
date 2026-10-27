@@ -247,56 +247,7 @@ document.querySelectorAll('.product-menu-parent, .product-menu-disclosure').forE
   control.addEventListener('click', () => toggleProductGroup(control));
 });
 
-// Dual-layer custom cursor: Outer blue ring + inner blue dot
-const cursorRing = document.getElementById('cursorRing');
-const cursorDot = document.getElementById('cursorDot');
 
-if (cursorRing && cursorDot && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-  let mouseX = -100, mouseY = -100;
-  let ringX = -100, ringY = -100;
-  let isVisible = false;
-
-  window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-
-    cursorDot.style.left = mouseX + 'px';
-    cursorDot.style.top = mouseY + 'px';
-
-    if (!isVisible) {
-      cursorRing.style.opacity = '1';
-      cursorDot.style.opacity = '1';
-      ringX = mouseX;
-      ringY = mouseY;
-      isVisible = true;
-    }
-  });
-
-  window.addEventListener('mouseleave', () => {
-    cursorRing.style.opacity = '0';
-    cursorDot.style.opacity = '0';
-    isVisible = false;
-  });
-
-  window.addEventListener('mouseenter', () => {
-    if (mouseX > 0) {
-      cursorRing.style.opacity = '1';
-      cursorDot.style.opacity = '1';
-      isVisible = true;
-    }
-  });
-
-  function animateCursor() {
-    ringX += (mouseX - ringX) * 0.22;
-    ringY += (mouseY - ringY) * 0.22;
-
-    cursorRing.style.left = ringX + 'px';
-    cursorRing.style.top = ringY + 'px';
-
-    requestAnimationFrame(animateCursor);
-  }
-  requestAnimationFrame(animateCursor);
-}
 
 // Pause background videos when off-screen to save resources
 const backgroundVideos = document.querySelectorAll('.hero-bg-video, .section-video');
