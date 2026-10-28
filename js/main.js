@@ -31,8 +31,6 @@ if (navAbout && aboutToggle) {
   aboutToggle.addEventListener('click', () => {
     const isOpen = navAbout.classList.toggle('is-open');
     aboutToggle.setAttribute('aria-expanded', String(isOpen));
-    setActiveNavSection('about');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
   document.addEventListener('click', (event) => {
     if (!navAbout.contains(event.target)) {
@@ -78,7 +76,7 @@ if ('IntersectionObserver' in window && navTargetSections.length) {
 const products = {
   trakwel: {
     number: '01', name: 'TrakWel',
-    description: 'Manufacturing Execution System (MES) for real-time visibility and control across the shop floor, improving efficiency, quality and performance.',
+    description: 'TrakWel brings key factory processes into a connected digital workflow, helping teams track material movement, monitor production, manage quality, and access operational information in real time.',
     stages: ['Track', 'Monitor', 'Improve'], image: 'assets/img/trakwel.png',
     alt: 'TrakWel smarter manufacturing execution system illustration', label: '', value: '', visual: 'trakwel', imageOnly: true
   },
@@ -114,25 +112,25 @@ const products = {
   },
   mtrak: {
     number: '07', name: 'mTrak',
-    description: 'Machine maintenance management that maximizes machine uptime, reduces downtime and extends equipment life with preventive maintenance.',
+    description: 'mTrak helps maintenance teams maintain a central record of factory assets, respond to breakdowns, schedule servicing, assign tasks, and review downtime and maintenance performance through dashboards and reports.',
     stages: ['Monitor', 'Maintain', 'Optimize'], image: 'assets/img/mTrak.png',
     alt: 'mTrak machine maintenance management interface', label: 'MACHINE HEALTH', value: 'RUNNING WELL', visual: 'mtrak', imageOnly: true
   },
   sewiot: {
-    number: '08', name: 'SewIoT',
-    description: 'IoT for sewing lines. Connect the sewing floor with technology to monitor, analyze and improve productivity.',
+    number: '08', name: 'Sewing IoT',
+    description: 'Sewing IoT connects sewing machines to a real-time data layer, helping factory teams see production progress, understand operator performance, identify non-productive time, and respond to issues sooner.',
     stages: ['Connect', 'Analyze', 'Improve'], image: 'assets/img/sew-IoT.png',
-    alt: 'SewIoT smart sewing line and connected factory real-time monitoring', label: 'SEWING LINE', value: 'CONNECTED', visual: 'sewiot', imageOnly: true
+    alt: 'Sewing IoT smart sewing line and connected factory real-time monitoring', label: 'SEWING LINE', value: 'CONNECTED', visual: 'sewiot', imageOnly: true
   },
   laundry: {
     number: '09', name: 'Laundry Management',
-    description: 'Follow garment lots through washing, treatment and finishing. Track process status and quality checks to keep laundry work aligned with order requirements.',
+    description: 'Laundry Management digitally tracks garment washing lots, machine allocation, operators, shades, and process flow using QR codes. It improves traceability, reduces manual errors, and provides real-time WIP visibility for efficient production control.',
     stages: ['Receive', 'Process', 'Inspect'], image: 'assets/img/laundry-management.png',
     alt: 'Laundry management workflow for garment processing and finishing', label: 'LAUNDRY FLOW', value: 'LOT IN PROCESS', visual: 'laundry', imageOnly: true
   },
   jig: {
     number: '10', name: 'Jig Management',
-    description: 'Organize sewing aids and jigs by style, line and order. Make availability and readiness visible so teams can reduce setup delays and keep production moving.',
+    description: 'Jig Management digitally tracks denim pocket jigs, including design details, sizes, storage, allocation, and availability using QR codes. It reduces manual errors, prevents loss, and improves inventory control and production efficiency.',
     stages: ['Register', 'Assign', 'Verify'], image: 'assets/img/Jig-management.png',
     alt: 'Jig management illustration showing organized jig storage, tracking and maintenance', label: 'JIG READINESS', value: 'AVAILABLE', visual: 'jig', imageOnly: true
   },
@@ -152,10 +150,53 @@ const productDescription = document.getElementById('productDescription');
 const productImage = document.getElementById('productImage');
 const productVisual = document.getElementById('productVisual');
 
+const scrollTargetToCenter = (target) => {
+  if (!target) return;
+  const nav = document.querySelector('nav');
+  const navHeight = nav ? nav.offsetHeight : 70;
+
+  if (target.id === 'about' || target === document.body) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return;
+  }
+
+  // Target the section cleanly so previous section edge/line never peeks through
+  const sectionTarget = target.closest('section') || target;
+  const targetRect = sectionTarget.getBoundingClientRect();
+  const targetTopPage = window.pageYOffset + targetRect.top;
+  const targetScrollY = Math.max(0, Math.round(targetTopPage - navHeight));
+
+  window.scrollTo({
+    top: targetScrollY,
+    behavior: 'smooth'
+  });
+};
+
+const productOrder = [
+  'trakwel',
+  'fabric-inventory',
+  'cutting-digitalization',
+  'tracking',
+  'quality',
+  'planwel',
+  'mtrak',
+  'sewiot',
+  'laundry',
+  'jig',
+  'shrinkage'
+];
+
+let currentProductIndex = 0;
+
 const selectProduct = (productId) => {
   const key = productId?.toLowerCase();
   const product = products[key];
   if (!product || !productDetail) return;
+
+  const idx = productOrder.indexOf(key);
+  if (idx !== -1) {
+    currentProductIndex = idx;
+  }
 
   const kickerEl = document.getElementById('productKicker');
   if (kickerEl) {
@@ -201,7 +242,7 @@ const selectProduct = (productId) => {
   }
 
   productChoices.forEach(choice => {
-    choice.classList.toggle('is-selected', choice.dataset.productChoice === productId);
+    choice.classList.toggle('is-selected', choice.dataset.productChoice === key);
   });
 
   productDetail.classList.remove('is-switching');
@@ -210,6 +251,55 @@ const selectProduct = (productId) => {
   window.setTimeout(() => productDetail.classList.remove('is-switching'), 450);
 };
 
+const navigateProduct = (delta) => {
+  currentProductIndex = (currentProductIndex + delta + productOrder.length) % productOrder.length;
+  const nextKey = productOrder[currentProductIndex];
+  selectProduct(nextKey);
+};
+
+const prevBtn = document.getElementById('productNavPrev');
+const nextBtn = document.getElementById('productNavNext');
+if (prevBtn) {
+  prevBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    navigateProduct(-1);
+  });
+}
+if (nextBtn) {
+  nextBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    navigateProduct(1);
+  });
+}
+
+// Touch swipe gestures on product showcase
+const productExpEl = document.getElementById('product-experience');
+if (productExpEl) {
+  let touchStartX = 0;
+  let touchStartY = 0;
+  productExpEl.addEventListener('touchstart', (e) => {
+    if (e.touches && e.touches.length === 1) {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }
+  }, { passive: true });
+
+  productExpEl.addEventListener('touchend', (e) => {
+    if (e.changedTouches && e.changedTouches.length === 1) {
+      const deltaX = e.changedTouches[0].clientX - touchStartX;
+      const deltaY = e.changedTouches[0].clientY - touchStartY;
+      if (Math.abs(deltaX) > 40 && Math.abs(deltaX) > Math.abs(deltaY) * 1.3) {
+        if (deltaX < 0) {
+          navigateProduct(1); // Swipe left -> Next
+        } else {
+          navigateProduct(-1); // Swipe right -> Previous
+        }
+      }
+    }
+  }, { passive: true });
+}
+
+// Product menu choice click handler
 productChoices.forEach(choice => {
   choice.addEventListener('click', (event) => {
     if (choice.tagName === 'A') {
@@ -226,7 +316,33 @@ productChoices.forEach(choice => {
     }
     selectProduct(choice.dataset.productChoice);
     setActiveNavSection('products');
-    productDetail?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const targetProduct = document.getElementById('product-experience') || productDetail;
+    scrollTargetToCenter(targetProduct);
+  });
+});
+
+// Universal smooth viewport-centering click handler for all section anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  if (a.hasAttribute('data-product-choice')) return;
+  a.addEventListener('click', (event) => {
+    const href = a.getAttribute('href');
+    if (!href || href === '#') return;
+    const target = document.querySelector(href);
+    if (target) {
+      event.preventDefault();
+      navLinks?.classList.remove('open');
+      navAbout?.classList.remove('is-open');
+      aboutToggle?.setAttribute('aria-expanded', 'false');
+      navProducts?.classList.remove('is-open');
+      productsToggle?.setAttribute('aria-expanded', 'false');
+
+      const targetNavSection = target.getAttribute('data-nav-target') || target.id;
+      setActiveNavSection(targetNavSection);
+      scrollTargetToCenter(target);
+      try {
+        history.replaceState(null, '', href);
+      } catch (_) {}
+    }
   });
 });
 
@@ -273,4 +389,7 @@ if ('IntersectionObserver' in window) {
   }, { threshold: 0.15 });
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 }
+
+// Additional information textarea allows unlimited length
+
 
