@@ -106,7 +106,7 @@ const products = {
   },
   planwel: {
     number: '06', name: 'PlanWel',
-    description: 'Advanced planning and scheduling to balance capacity, manage orders and keep delivery commitments on track with dynamic schedules.',
+    description: 'PlanWel is a smart production planning solution that optimizes factory capacity, simplifies production scheduling, tracks timelines and monitors performance through real-time dashboards and ERP integration. It enables better resource utilization, faster decision-making and improved on-time delivery.',
     stages: ['Plan', 'Schedule', 'Deliver'], image: 'assets/img/planwel.png',
     alt: 'PlanWel production planning and scheduling interface', label: 'CAPACITY PLAN', value: 'SCHEDULED', visual: 'planwel', imageOnly: true
   },
