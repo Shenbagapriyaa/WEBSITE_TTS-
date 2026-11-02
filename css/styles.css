@@ -371,7 +371,7 @@ nav .nav-products .products-menu .is-selected{box-shadow:inset 4px 0 #146477;fon
 .client-logo{display:block;width:100%;height:60px;}
 .client-logo-img{display:block;max-width:88%;max-height:48px;width:auto;height:auto;object-fit:contain;}
 .client-mark[aria-label*="Penguin"] .client-logo-img{max-width:90%;max-height:48px;width:auto;height:auto;object-fit:contain;}
-.client-mark[aria-label*="Shell"] .client-logo-img{max-width:92%;max-height:64px;width:auto;height:auto;object-fit:contain;}
+.client-mark[aria-label*="Shell"] .client-logo-img{max-width:92%;max-height:66px;width:auto;height:auto;object-fit:contain;border-radius:6px;}
 .client-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:1080px;margin:18px auto 0;padding:14px 0;background:rgba(10,30,43,0.76);border:1px solid rgba(204,226,235,0.34);border-radius:10px;backdrop-filter:blur(8px);}
 .client-metric{display:flex;min-width:0;min-height:118px;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:12px 10px;text-align:center;}
 .client-metric:not(:last-child){border-right:1px solid rgba(204,226,235,0.28);}
