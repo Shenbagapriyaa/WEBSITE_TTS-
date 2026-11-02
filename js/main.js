@@ -1,3 +1,14 @@
+// Synchronize exact navbar height to CSS variable
+const siteNav = document.getElementById('siteNav');
+const updateNavHeight = () => {
+  if (siteNav) {
+    const h = siteNav.getBoundingClientRect().height || 96;
+    document.documentElement.style.setProperty('--nav-height', `${Math.round(h)}px`);
+  }
+};
+updateNavHeight();
+window.addEventListener('resize', updateNavHeight);
+
 // Mobile nav toggle
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
@@ -29,8 +40,32 @@ if (navToggle && navLinks) {
 
 if (navAbout && aboutToggle) {
   aboutToggle.addEventListener('click', () => {
-    const isOpen = navAbout.classList.toggle('is-open');
-    aboutToggle.setAttribute('aria-expanded', String(isOpen));
+    if (window.innerWidth > 800) {
+      // Desktop: clicking About scrolls directly to #about (Hero section)
+      const target = document.getElementById('about');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+        setActiveNavSection('about');
+      }
+      navAbout.classList.remove('is-open');
+      aboutToggle.setAttribute('aria-expanded', 'false');
+    } else {
+      // Mobile: if already open, clicking About scrolls to #about
+      if (navAbout.classList.contains('is-open')) {
+        const target = document.getElementById('about');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+          setActiveNavSection('about');
+        }
+        navLinks?.classList.remove('open');
+        navAbout.classList.remove('is-open');
+        aboutToggle.setAttribute('aria-expanded', 'false');
+      } else {
+        // First tap opens dropdown showing Track Tech Solution
+        navAbout.classList.add('is-open');
+        aboutToggle.setAttribute('aria-expanded', 'true');
+      }
+    }
   });
   document.addEventListener('click', (event) => {
     if (!navAbout.contains(event.target)) {

@@ -1,5 +1,6 @@
 
 :root{
+  --nav-height:96px;
   --navy:#0A1E2B;
   --navy-2:#0F2A3B;
   --cyan:#2FE8C8;
@@ -88,6 +89,10 @@ nav .nav-products .products-menu .is-selected{box-shadow:inset 4px 0 #146477;fon
 @media(min-width:801px){.nav-about:hover .products-menu,.nav-about:focus-within .products-menu{opacity:1;visibility:visible;transform:translateY(0);}}
 .nav-cta{background:var(--cyan);color:var(--navy);padding:9px 18px;border-radius:6px;font-weight:600;font-size:0.9rem;text-decoration:none;white-space:nowrap;}
 .nav-toggle{display:none;background:none;border:0;color:var(--white);font-size:1.4rem;cursor:pointer;}
+@media(max-width:1100px) and (min-width:801px){
+  .nav-links{gap:16px;}
+  .nav-links a, .nav-products-toggle{font-size:0.88rem;}
+}
 @media(max-width:800px){
   .nav-links{
     display:flex; flex-direction:column; gap:0; position:absolute; top:100%; left:0; right:0;
@@ -695,26 +700,43 @@ footer a:hover{color:#147866;}
   letter-spacing: 0.4px;
 }
 
-/* CLIENTS SECTION: Substantial Box & Balanced Page Coverage */
+/* CLIENTS SECTION: Substantial Box & Balanced Page Coverage with Crisp Divider Lines */
 .client-metrics {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   max-width: 1080px;
-  margin: 16px auto 0;
-  padding: 14px 0 12px;
+  margin: 14px auto 0;
+  padding: 10px 0;
   border-radius: 10px;
+  border: 1.5px solid #8DA7A5 !important;
+  background: rgba(235, 242, 241, 0.90) !important;
   backdrop-filter: blur(8px);
 }
 .client-metric {
   display: flex;
   min-width: 0;
-  min-height: 104px;
+  min-height: 100px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 3px;
-  padding: 8px 12px;
+  padding: 6px 12px;
   text-align: center;
+  box-sizing: border-box;
+}
+.client-metric:not(:last-child) {
+  border-right: 1.5px solid #8DA7A5 !important;
+}
+@media (max-width: 720px) {
+  .client-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .client-metric:nth-child(2) {
+    border-right: none !important;
+  }
+  .client-metric:nth-child(-n+2) {
+    border-bottom: 1.5px solid #8DA7A5 !important;
+  }
 }
 .client-metric .metric-badge {
   width: 48px;
@@ -738,4 +760,38 @@ footer a:hover{color:#147866;}
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.4px;
+}
+
+
+/* ==========================================================================
+   FULL VIEWPORT PAGE PER SECTION - NO NEXT/PREVIOUS SECTION PEEKING
+   Whichever section is touched or navigated to occupies the entire viewport.
+   ========================================================================== */
+@media (max-width: 480px) {
+  :root {
+    --nav-height: 84px;
+  }
+}
+
+.hero,
+.company-section,
+.leadership-section,
+.products-section,
+.clients-section,
+.contact-section {
+  min-height: calc(100vh - var(--nav-height)) !important;
+  scroll-margin-top: var(--nav-height) !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding-top: 24px !important;
+  padding-bottom: 24px !important;
+}
+
+.product-experience,
+.product-detail {
+  scroll-margin-top: var(--nav-height) !important;
 }
